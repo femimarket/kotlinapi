@@ -6,8 +6,8 @@ plugins {
     `maven-publish`
 }
 
-group = "market.femi"
-version = "1.0.0"
+group = (project.findProperty("group") as String?) ?: "market.femi"
+version = (project.findProperty("version") as String?) ?: "1.0.0"
 
 val kotlin_version = "2.2.20"
 val coroutines_version = "1.10.2"
@@ -78,6 +78,7 @@ kotlin {
         all {
             languageSettings {
                 optIn("kotlin.time.ExperimentalTime")
+                optIn("kotlin.uuid.ExperimentalUuidApi")
             }
         }
     }
