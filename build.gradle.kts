@@ -7,7 +7,7 @@ plugins {
 }
 
 group = (project.findProperty("group") as String?) ?: "io.github.femimarket"
-version = (project.findProperty("version") as String?) ?: "1.0.0"
+version = (project.findProperty("version") as String?) ?: "0.4.0"
 
 mavenPublishing {
     publishToMavenCentral(com.vanniktech.maven.publish.SonatypeHost.CENTRAL_PORTAL)
