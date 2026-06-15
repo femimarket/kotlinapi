@@ -191,7 +191,8 @@ open class ApiClient(
 }
 
 class MultipartFileSource(
-    val provider: io.ktor.client.request.forms.InputProvider,
     val filename: String,
-    val contentType: io.ktor.http.ContentType,
-)
+    val provider: io.ktor.client.request.forms.InputProvider,
+) {
+    val contentType: io.ktor.http.ContentType = io.ktor.http.ContentType.defaultForFilePath(filename)
+}

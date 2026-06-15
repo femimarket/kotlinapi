@@ -3,11 +3,39 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     kotlin("multiplatform") version "2.2.20" // kotlin_version
     kotlin("plugin.serialization") version "2.2.20" // kotlin_version
-    `maven-publish`
+    id("com.vanniktech.maven.publish") version "0.30.0"
 }
 
-group = (project.findProperty("group") as String?) ?: "market.femi"
+group = (project.findProperty("group") as String?) ?: "io.github.femimarket"
 version = (project.findProperty("version") as String?) ?: "1.0.0"
+
+mavenPublishing {
+    publishToMavenCentral(com.vanniktech.maven.publish.SonatypeHost.CENTRAL_PORTAL)
+    signAllPublications()
+    coordinates("io.github.femimarket", "kotlinapi", project.version.toString())
+    pom {
+        name.set("kotlinapi")
+        description.set("Kotlin client for api.earnfemi.com")
+        url.set("https://github.com/femimarket/kotlinapi")
+        licenses {
+            license {
+                name.set("MIT")
+                url.set("https://opensource.org/licenses/MIT")
+            }
+        }
+        developers {
+            developer {
+                id.set("femimarket")
+                name.set("femi")
+            }
+        }
+        scm {
+            url.set("https://github.com/femimarket/kotlinapi")
+            connection.set("scm:git:https://github.com/femimarket/kotlinapi.git")
+            developerConnection.set("scm:git:ssh://git@github.com/femimarket/kotlinapi.git")
+        }
+    }
+}
 
 val kotlin_version = "2.2.20"
 val coroutines_version = "1.10.2"
