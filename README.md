@@ -62,7 +62,6 @@ All URIs are relative to *https://api.earnfemi.com*
  - [market.femi.api.models.ApiKey](docs/ApiKey.md)
  - [market.femi.api.models.ApiPay](docs/ApiPay.md)
  - [market.femi.api.models.ApiPayProvider](docs/ApiPayProvider.md)
- - [market.femi.api.models.ApiPricing](docs/ApiPricing.md)
  - [market.femi.api.models.ApiStatus](docs/ApiStatus.md)
  - [market.femi.api.models.ApplePay](docs/ApplePay.md)
  - [market.femi.api.models.ApplePayStatus](docs/ApplePayStatus.md)

@@ -14,7 +14,6 @@
 | **messages** | [**kotlin.collections.List&lt;ApiChatMessage&gt;**](ApiChatMessage.md) | default value is non-empty array |  |
 | **model** | [**ApiAiModel**](ApiAiModel.md) |  |  |
 | **pay** | [**ApiPay**](ApiPay.md) |  |  |
-| **pricing** | [**ApiPricing**](ApiPricing.md) |  |  |
 | **prompt** | **kotlin.String** |  |  |
 | **requestId** | **kotlin.String** | transient, managed by server |  |
 | **status** | [**ApiStatus**](ApiStatus.md) |  |  |

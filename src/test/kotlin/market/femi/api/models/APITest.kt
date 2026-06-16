@@ -31,7 +31,6 @@ import market.femi.api.models.ApiAction
 import market.femi.api.models.ApiAiModel
 import market.femi.api.models.ApiChatMessage
 import market.femi.api.models.ApiPay
-import market.femi.api.models.ApiPricing
 import market.femi.api.models.ApiStatus
 
 class APITest : ShouldSpec() {
@@ -97,12 +96,6 @@ class APITest : ShouldSpec() {
         should("test pay") {
             // uncomment below to test the property
             //modelInstance.pay shouldBe ("TODO")
-        }
-
-        // to test the property `pricing`
-        should("test pricing") {
-            // uncomment below to test the property
-            //modelInstance.pricing shouldBe ("TODO")
         }
 
         // to test the property `prompt`

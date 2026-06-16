@@ -11,7 +11,6 @@ docs/ApiKey.md
 docs/ApiKeyRouteApi.md
 docs/ApiPay.md
 docs/ApiPayProvider.md
-docs/ApiPricing.md
 docs/ApiStatus.md
 docs/ApplePay.md
 docs/ApplePayRouteApi.md
@@ -82,7 +81,6 @@ src/commonMain/kotlin/market/femi/api/models/ApiChatRole.kt
 src/commonMain/kotlin/market/femi/api/models/ApiKey.kt
 src/commonMain/kotlin/market/femi/api/models/ApiPay.kt
 src/commonMain/kotlin/market/femi/api/models/ApiPayProvider.kt
-src/commonMain/kotlin/market/femi/api/models/ApiPricing.kt
 src/commonMain/kotlin/market/femi/api/models/ApiStatus.kt
 src/commonMain/kotlin/market/femi/api/models/ApplePay.kt
 src/commonMain/kotlin/market/femi/api/models/ApplePayStatus.kt
@@ -125,7 +123,6 @@ src/test/kotlin/market/femi/api/models/ApiChatRoleTest.kt
 src/test/kotlin/market/femi/api/models/ApiKeyTest.kt
 src/test/kotlin/market/femi/api/models/ApiPayProviderTest.kt
 src/test/kotlin/market/femi/api/models/ApiPayTest.kt
-src/test/kotlin/market/femi/api/models/ApiPricingTest.kt
 src/test/kotlin/market/femi/api/models/ApiStatusTest.kt
 src/test/kotlin/market/femi/api/models/ApplePayStatusTest.kt
 src/test/kotlin/market/femi/api/models/ApplePayTest.kt

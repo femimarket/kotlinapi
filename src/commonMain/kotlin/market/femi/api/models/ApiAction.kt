@@ -32,7 +32,7 @@ import kotlinx.serialization.encoding.Encoder
 /**
  * 
  *
- * Values: Generate,Poll,Pay,Chat,Balance,Pricing
+ * Values: Generate,Pay
  */
 @Serializable
 enum class ApiAction(val value: kotlin.String) {
@@ -40,20 +40,8 @@ enum class ApiAction(val value: kotlin.String) {
     @SerialName(value = "Generate")
     Generate("Generate"),
 
-    @SerialName(value = "Poll")
-    Poll("Poll"),
-
     @SerialName(value = "Pay")
-    Pay("Pay"),
-
-    @SerialName(value = "Chat")
-    Chat("Chat"),
-
-    @SerialName(value = "Balance")
-    Balance("Balance"),
-
-    @SerialName(value = "Pricing")
-    Pricing("Pricing");
+    Pay("Pay");
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use

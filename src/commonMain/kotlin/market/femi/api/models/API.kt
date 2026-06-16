@@ -27,7 +27,6 @@ import market.femi.api.models.ApiAction
 import market.femi.api.models.ApiAiModel
 import market.femi.api.models.ApiChatMessage
 import market.femi.api.models.ApiPay
-import market.femi.api.models.ApiPricing
 import market.femi.api.models.ApiStatus
 
 import kotlinx.serialization.*
@@ -47,7 +46,6 @@ import kotlinx.serialization.encoding.*
  * @param messages default value is non-empty array
  * @param model 
  * @param pay 
- * @param pricing 
  * @param prompt 
  * @param requestId transient, managed by server
  * @param status 
@@ -81,8 +79,6 @@ data class API (
     @SerialName(value = "model") @Required val model: ApiAiModel,
 
     @SerialName(value = "pay") @Required val pay: ApiPay,
-
-    @SerialName(value = "pricing") @Required val pricing: ApiPricing,
 
     @SerialName(value = "prompt") @Required val prompt: kotlin.String,
 

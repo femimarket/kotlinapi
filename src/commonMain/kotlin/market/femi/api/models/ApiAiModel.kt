@@ -32,7 +32,7 @@ import kotlinx.serialization.encoding.Encoder
 /**
  * 
  *
- * Values: ZImageTurbo,NanoBanana2,Flux2Pro,Ltx2_3A2V
+ * Values: ZImageTurbo,NanoBanana2,Flux2Pro,Ltx2_3A2V,NgrokText
  */
 @Serializable
 enum class ApiAiModel(val value: kotlin.String) {
@@ -47,7 +47,10 @@ enum class ApiAiModel(val value: kotlin.String) {
     Flux2Pro("Flux2Pro"),
 
     @SerialName(value = "Ltx2_3A2V")
-    Ltx2_3A2V("Ltx2_3A2V");
+    Ltx2_3A2V("Ltx2_3A2V"),
+
+    @SerialName(value = "NgrokText")
+    NgrokText("NgrokText");
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use
