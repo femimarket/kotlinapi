@@ -46,7 +46,6 @@ All URIs are relative to *https://api.earnfemi.com*
 | *RevolutRouteApi* | [**revolut**](docs/RevolutRouteApi.md#revolut) | **POST** /revolut |  |
 | *SolanaRouteApi* | [**solana**](docs/SolanaRouteApi.md#solana) | **POST** /solana |  |
 | *SquareRouteApi* | [**square**](docs/SquareRouteApi.md#square) | **POST** /square |  |
-| *StripeRouteApi* | [**stripe**](docs/StripeRouteApi.md#stripe) | **POST** /stripe |  |
 | *UploadRouteApi* | [**upload**](docs/UploadRouteApi.md#upload) | **POST** /upload |  |
 | *WiseApi* | [**wiseCheck**](docs/WiseApi.md#wisecheck) | **POST** /wise_check |  |
 | *WiseRouteApi* | [**wise**](docs/WiseRouteApi.md#wise) | **POST** /wise |  |
@@ -72,7 +71,6 @@ All URIs are relative to *https://api.earnfemi.com*
  - [market.femi.api.models.Episode](docs/Episode.md)
  - [market.femi.api.models.Faq](docs/Faq.md)
  - [market.femi.api.models.LyricSync](docs/LyricSync.md)
- - [market.femi.api.models.Model](docs/Model.md)
  - [market.femi.api.models.Pay](docs/Pay.md)
  - [market.femi.api.models.PayProvider](docs/PayProvider.md)
  - [market.femi.api.models.PayStatus](docs/PayStatus.md)

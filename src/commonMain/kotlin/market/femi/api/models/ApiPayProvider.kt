@@ -32,7 +32,7 @@ import kotlinx.serialization.encoding.Encoder
 /**
  * 
  *
- * Values: Apple,Google
+ * Values: Apple,Google,Stripe
  */
 @Serializable
 enum class ApiPayProvider(val value: kotlin.String) {
@@ -41,7 +41,10 @@ enum class ApiPayProvider(val value: kotlin.String) {
     Apple("Apple"),
 
     @SerialName(value = "Google")
-    Google("Google");
+    Google("Google"),
+
+    @SerialName(value = "Stripe")
+    Stripe("Stripe");
 
     /**
      * Override [toString()] to avoid using the enum variable name as the value, and instead use

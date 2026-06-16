@@ -37,12 +37,13 @@ import kotlinx.serialization.encoding.*
  * @param jws Signed transaction JWS from StoreKit; the input to Apple verification.
  * @param loaded 
  * @param packageName 
+ * @param paymentUrl Stripe only. Hosted-payment URL returned by `checkout.sessions.create` — empty until the server creates the session.
  * @param price 
  * @param productId 
  * @param provider Selects the verification path: Apple App Store vs Google Play.
  * @param refId Globally-unique purchase id, used as the idempotency key for both stores. Apple: the `transactionId`, extracted server-side from the verified JWS   (empty on the incoming request — the server fills it in). Google: the `purchaseToken`, sent by the client. It is both the input to   Play Developer API verification and the idempotency key.
  * @param userId 
- * @param orderId Google's per-purchase `orderId`, returned by the Play Developer API (not the client). Not used for dedup — `ref_id` is — because promo-code purchases may have no `orderId`.
+ * @param orderId Google's per-purchase `orderId`, returned by the Play Developer API (not the client). Not used for dedup — `ref_id` is — because promo-code purchases may have no `orderId`. On the Stripe path, the same field carries the `payment_intent` id returned by `checkout.session.completed`.
  */
 @Serializable
 
@@ -60,6 +61,9 @@ data class ApiPay (
 
     @SerialName(value = "package_name") @Required val packageName: kotlin.String,
 
+    /* Stripe only. Hosted-payment URL returned by `checkout.sessions.create` — empty until the server creates the session. */
+    @SerialName(value = "payment_url") @Required val paymentUrl: kotlin.String,
+
     @SerialName(value = "price") @Required val price: kotlin.Long,
 
     @SerialName(value = "product_id") @Required val productId: kotlin.String,
@@ -72,7 +76,7 @@ data class ApiPay (
 
     @SerialName(value = "user_id") @Required val userId: kotlin.String,
 
-    /* Google's per-purchase `orderId`, returned by the Play Developer API (not the client). Not used for dedup — `ref_id` is — because promo-code purchases may have no `orderId`. */
+    /* Google's per-purchase `orderId`, returned by the Play Developer API (not the client). Not used for dedup — `ref_id` is — because promo-code purchases may have no `orderId`. On the Stripe path, the same field carries the `payment_intent` id returned by `checkout.session.completed`. */
     @SerialName(value = "order_id") val orderId: kotlin.String? = null
 
 ) {

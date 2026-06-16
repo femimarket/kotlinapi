@@ -8,5 +8,7 @@
 
     * `Google` (value: `"Google"`)
 
+    * `Stripe` (value: `"Stripe"`)
+
 
 

@@ -64,6 +64,12 @@ class ApiPayTest : ShouldSpec() {
             //modelInstance.packageName shouldBe ("TODO")
         }
 
+        // to test the property `paymentUrl` - Stripe only. Hosted-payment URL returned by `checkout.sessions.create` — empty until the server creates the session.
+        should("test paymentUrl") {
+            // uncomment below to test the property
+            //modelInstance.paymentUrl shouldBe ("TODO")
+        }
+
         // to test the property `price`
         should("test price") {
             // uncomment below to test the property
@@ -94,7 +100,7 @@ class ApiPayTest : ShouldSpec() {
             //modelInstance.userId shouldBe ("TODO")
         }
 
-        // to test the property `orderId` - Google's per-purchase `orderId`, returned by the Play Developer API (not the client). Not used for dedup — `ref_id` is — because promo-code purchases may have no `orderId`.
+        // to test the property `orderId` - Google's per-purchase `orderId`, returned by the Play Developer API (not the client). Not used for dedup — `ref_id` is — because promo-code purchases may have no `orderId`. On the Stripe path, the same field carries the `payment_intent` id returned by `checkout.session.completed`.
         should("test orderId") {
             // uncomment below to test the property
             //modelInstance.orderId shouldBe ("TODO")

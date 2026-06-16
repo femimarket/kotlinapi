@@ -22,7 +22,6 @@ docs/Episode.md
 docs/Faq.md
 docs/LyricSync.md
 docs/LyricSyncRouteApi.md
-docs/Model.md
 docs/Pay.md
 docs/PayProvider.md
 docs/PayRouteApi.md
@@ -39,7 +38,6 @@ docs/SolanaRouteApi.md
 docs/Square.md
 docs/SquareRouteApi.md
 docs/Status.md
-docs/StripeRouteApi.md
 docs/Upload.md
 docs/UploadRouteApi.md
 docs/Wise.md
@@ -60,7 +58,6 @@ src/commonMain/kotlin/market/femi/api/apis/ProjectRouteApi.kt
 src/commonMain/kotlin/market/femi/api/apis/RevolutRouteApi.kt
 src/commonMain/kotlin/market/femi/api/apis/SolanaRouteApi.kt
 src/commonMain/kotlin/market/femi/api/apis/SquareRouteApi.kt
-src/commonMain/kotlin/market/femi/api/apis/StripeRouteApi.kt
 src/commonMain/kotlin/market/femi/api/apis/UploadRouteApi.kt
 src/commonMain/kotlin/market/femi/api/apis/WiseApi.kt
 src/commonMain/kotlin/market/femi/api/apis/WiseRouteApi.kt
@@ -94,7 +91,6 @@ src/commonMain/kotlin/market/femi/api/models/CharacterAlignment.kt
 src/commonMain/kotlin/market/femi/api/models/Episode.kt
 src/commonMain/kotlin/market/femi/api/models/Faq.kt
 src/commonMain/kotlin/market/femi/api/models/LyricSync.kt
-src/commonMain/kotlin/market/femi/api/models/Model.kt
 src/commonMain/kotlin/market/femi/api/models/Pay.kt
 src/commonMain/kotlin/market/femi/api/models/PayProvider.kt
 src/commonMain/kotlin/market/femi/api/models/PayStatus.kt
@@ -118,7 +114,6 @@ src/test/kotlin/market/femi/api/apis/ProjectRouteApiTest.kt
 src/test/kotlin/market/femi/api/apis/RevolutRouteApiTest.kt
 src/test/kotlin/market/femi/api/apis/SolanaRouteApiTest.kt
 src/test/kotlin/market/femi/api/apis/SquareRouteApiTest.kt
-src/test/kotlin/market/femi/api/apis/StripeRouteApiTest.kt
 src/test/kotlin/market/femi/api/apis/UploadRouteApiTest.kt
 src/test/kotlin/market/femi/api/apis/WiseApiTest.kt
 src/test/kotlin/market/femi/api/apis/WiseRouteApiTest.kt
@@ -139,7 +134,6 @@ src/test/kotlin/market/femi/api/models/CharacterAlignmentTest.kt
 src/test/kotlin/market/femi/api/models/EpisodeTest.kt
 src/test/kotlin/market/femi/api/models/FaqTest.kt
 src/test/kotlin/market/femi/api/models/LyricSyncTest.kt
-src/test/kotlin/market/femi/api/models/ModelTest.kt
 src/test/kotlin/market/femi/api/models/PayProviderTest.kt
 src/test/kotlin/market/femi/api/models/PayStatusTest.kt
 src/test/kotlin/market/femi/api/models/PayTest.kt
