@@ -36,7 +36,7 @@ All URIs are relative to *https://api.earnfemi.com*
 
 | Class | Method | HTTP request | Description |
 | ------------ | ------------- | ------------- | ------------- |
-| *ApiApi* | [**api**](docs/ApiApi.md#api) | **POST** /api |  |
+| *ApiApi* | [**apiHandler**](docs/ApiApi.md#apihandler) | **POST** /api |  |
 | *ApiApi* | [**mediaGate**](docs/ApiApi.md#mediagate) | **GET** /{file} | Auth + per-GB debit gate in front of the `_upload` ServeDir on femi.market.   - not a media file → pass through (static site, app data, 404), free   - media file that isn't a real file in `_upload` → pass through, free   - media file in `_upload` → require Bearer, charge `size × pricing.gb`,     record a debit in the astc ledger, then let ServeDir stream the bytes. The gate only authorizes/charges; ServeDir still does the actual file streaming (range requests, mime, etc.). |
 | *ApiKeyRouteApi* | [**apiKey**](docs/ApiKeyRouteApi.md#apikey) | **POST** /api_key |  |
 | *ApplePayRouteApi* | [**applePay**](docs/ApplePayRouteApi.md#applepay) | **POST** /apple_pay |  |

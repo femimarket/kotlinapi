@@ -24,12 +24,6 @@
 package market.femi.api.apis
 
 import market.femi.api.models.API
-import market.femi.api.models.ApiAction
-import market.femi.api.models.ApiAiModel
-import market.femi.api.models.ApiChatMessage
-import market.femi.api.models.ApiPay
-import market.femi.api.models.ApiPricing
-import market.femi.api.models.ApiStatus
 
 import market.femi.api.infrastructure.*
 import io.ktor.client.HttpClient
@@ -131,46 +125,15 @@ open class ApiApi : ApiClient {
     /**
      * 
      * 
-     * @param action 
-     * @param audio filename of already uploaded audio else default
-     * @param balance 
-     * @param credit 
-     * @param file filename of result to retrieve
-     * @param id uuid v7
-     * @param image filename of already uploaded image else default
-     * @param messages default value is non-empty array
-     * @param model 
-     * @param pay 
-     * @param pricing 
-     * @param prompt 
-     * @param requestId transient, managed by server
-     * @param status 
-     * @param userId 
+     * @param API 
      * @return API
      */
     @Suppress("UNCHECKED_CAST")
-    open suspend fun api(action: ApiAction, audio: kotlin.String, balance: kotlin.Long, credit: kotlin.Long, file: kotlin.String, id: kotlin.uuid.Uuid, image: kotlin.String, messages: kotlin.collections.List<ApiChatMessage>, model: ApiAiModel, pay: ApiPay, pricing: ApiPricing, prompt: kotlin.String, requestId: kotlin.String, status: ApiStatus, userId: kotlin.String, files: Map<String, MultipartFileSource>? = null): HttpResponse<API> {
+    open suspend fun apiHandler(API: API): HttpResponse<API> {
 
         val localVariableAuthNames = listOf<String>("bearer")
 
-        val localVariableBody = 
-            formData {
-                action?.let { appendBracket("action", it, files) }
-                audio?.let { appendBracket("audio", it, files) }
-                balance?.let { appendBracket("balance", it, files) }
-                credit?.let { appendBracket("credit", it, files) }
-                file?.let { appendBracket("file", it, files) }
-                id?.let { appendBracket("id", it, files) }
-                image?.let { appendBracket("image", it, files) }
-                messages?.let { appendBracket("messages", it, files) }
-                model?.let { appendBracket("model", it, files) }
-                pay?.let { appendBracket("pay", it, files) }
-                pricing?.let { appendBracket("pricing", it, files) }
-                prompt?.let { appendBracket("prompt", it, files) }
-                requestId?.let { appendBracket("request_id", it, files) }
-                status?.let { appendBracket("status", it, files) }
-                userId?.let { appendBracket("user_id", it, files) }
-            }
+        val localVariableBody = API
 
         val localVariableQuery = mutableMapOf<String, List<String>>()
         val localVariableHeaders = mutableMapOf<String, String>()
@@ -183,12 +146,13 @@ open class ApiApi : ApiClient {
             requiresAuthentication = true,
         )
 
-        return multipartFormRequest(
+        return jsonRequest(
             localVariableConfig,
             localVariableBody,
             localVariableAuthNames
         ).wrap()
     }
+
 
 
     /**

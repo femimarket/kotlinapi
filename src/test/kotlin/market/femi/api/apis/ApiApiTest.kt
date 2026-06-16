@@ -28,37 +28,17 @@ import io.kotlintest.specs.ShouldSpec
 
 import market.femi.api.apis.ApiApi
 import market.femi.api.models.API
-import market.femi.api.models.ApiAction
-import market.femi.api.models.ApiAiModel
-import market.femi.api.models.ApiChatMessage
-import market.femi.api.models.ApiPay
-import market.femi.api.models.ApiPricing
-import market.femi.api.models.ApiStatus
 
 class ApiApiTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of ApiApi
         //val apiInstance = ApiApi()
 
-        // to test api
-        should("test api") {
-            // uncomment below to test api
-            //val action : ApiAction =  // ApiAction | 
-            //val audio : kotlin.String = audio_example // kotlin.String | filename of already uploaded audio else default
-            //val balance : kotlin.Long = 789 // kotlin.Long | 
-            //val credit : kotlin.Long = 789 // kotlin.Long | 
-            //val file : kotlin.String = file_example // kotlin.String | filename of result to retrieve
-            //val id : kotlin.uuid.Uuid = 38400000-8cf0-11bd-b23e-10b96e4ef00d // kotlin.uuid.Uuid | uuid v7
-            //val image : kotlin.String = image_example // kotlin.String | filename of already uploaded image else default
-            //val messages : kotlin.collections.List<ApiChatMessage> =  // kotlin.collections.List<ApiChatMessage> | default value is non-empty array
-            //val model : ApiAiModel =  // ApiAiModel | 
-            //val pay : ApiPay =  // ApiPay | 
-            //val pricing : ApiPricing =  // ApiPricing | 
-            //val prompt : kotlin.String = prompt_example // kotlin.String | 
-            //val requestId : kotlin.String = requestId_example // kotlin.String | transient, managed by server
-            //val status : ApiStatus =  // ApiStatus | 
-            //val userId : kotlin.String = userId_example // kotlin.String | 
-            //val result : API = apiInstance.api(action, audio, balance, credit, file, id, image, messages, model, pay, pricing, prompt, requestId, status, userId)
+        // to test apiHandler
+        should("test apiHandler") {
+            // uncomment below to test apiHandler
+            //val API : API =  // API | 
+            //val result : API = apiInstance.apiHandler(API)
             //result shouldBe ("TODO")
         }
 
