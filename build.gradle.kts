@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "io.github.femimarket"
-version = "3.0.0"
+version = "4.0.0"
 
 mavenPublishing {
     publishToMavenCentral(com.vanniktech.maven.publish.SonatypeHost.CENTRAL_PORTAL)
