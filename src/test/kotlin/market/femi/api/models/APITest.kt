@@ -44,7 +44,7 @@ class APITest : ShouldSpec() {
             //modelInstance.action shouldBe ("TODO")
         }
 
-        // to test the property `audio` - filename of already uploaded audio else default
+        // to test the property `audio` - input audio as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
         should("test audio") {
             // uncomment below to test the property
             //modelInstance.audio shouldBe ("TODO")
@@ -74,7 +74,7 @@ class APITest : ShouldSpec() {
             //modelInstance.id shouldBe ("TODO")
         }
 
-        // to test the property `image` - filename of already uploaded image else default
+        // to test the property `image` - input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
         should("test image") {
             // uncomment below to test the property
             //modelInstance.image shouldBe ("TODO")

@@ -37,12 +37,12 @@ import kotlinx.serialization.encoding.*
  * default values
  *
  * @param action 
- * @param audio filename of already uploaded audio else default
+ * @param audio input audio as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
  * @param balance 
  * @param credit 
  * @param file filename of result to retrieve
  * @param id uuid v7
- * @param image filename of already uploaded image else default
+ * @param image input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
  * @param messages default value is non-empty array
  * @param model 
  * @param pay 
@@ -57,7 +57,7 @@ data class API (
 
     @SerialName(value = "action") @Required val action: ApiAction,
 
-    /* filename of already uploaded audio else default */
+    /* input audio as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side */
     @SerialName(value = "audio") @Required val audio: kotlin.String,
 
     @SerialName(value = "balance") @Required val balance: kotlin.Long,
@@ -70,7 +70,7 @@ data class API (
     /* uuid v7 */
     @SerialName(value = "id") @Required val id: kotlin.uuid.Uuid,
 
-    /* filename of already uploaded image else default */
+    /* input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side */
     @SerialName(value = "image") @Required val image: kotlin.String,
 
     /* default value is non-empty array */

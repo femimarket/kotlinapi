@@ -37,8 +37,6 @@ docs/SolanaRouteApi.md
 docs/Square.md
 docs/SquareRouteApi.md
 docs/Status.md
-docs/Upload.md
-docs/UploadRouteApi.md
 docs/Wise.md
 docs/WiseApi.md
 docs/WiseRouteApi.md
@@ -57,7 +55,6 @@ src/commonMain/kotlin/market/femi/api/apis/ProjectRouteApi.kt
 src/commonMain/kotlin/market/femi/api/apis/RevolutRouteApi.kt
 src/commonMain/kotlin/market/femi/api/apis/SolanaRouteApi.kt
 src/commonMain/kotlin/market/femi/api/apis/SquareRouteApi.kt
-src/commonMain/kotlin/market/femi/api/apis/UploadRouteApi.kt
 src/commonMain/kotlin/market/femi/api/apis/WiseApi.kt
 src/commonMain/kotlin/market/femi/api/apis/WiseRouteApi.kt
 src/commonMain/kotlin/market/femi/api/auth/ApiKeyAuth.kt
@@ -100,7 +97,6 @@ src/commonMain/kotlin/market/femi/api/models/Shot.kt
 src/commonMain/kotlin/market/femi/api/models/Solana.kt
 src/commonMain/kotlin/market/femi/api/models/Square.kt
 src/commonMain/kotlin/market/femi/api/models/Status.kt
-src/commonMain/kotlin/market/femi/api/models/Upload.kt
 src/commonMain/kotlin/market/femi/api/models/Wise.kt
 src/commonMain/kotlin/market/femi/api/models/WordAlignment.kt
 src/test/kotlin/market/femi/api/apis/ApiApiTest.kt
@@ -112,7 +108,6 @@ src/test/kotlin/market/femi/api/apis/ProjectRouteApiTest.kt
 src/test/kotlin/market/femi/api/apis/RevolutRouteApiTest.kt
 src/test/kotlin/market/femi/api/apis/SolanaRouteApiTest.kt
 src/test/kotlin/market/femi/api/apis/SquareRouteApiTest.kt
-src/test/kotlin/market/femi/api/apis/UploadRouteApiTest.kt
 src/test/kotlin/market/femi/api/apis/WiseApiTest.kt
 src/test/kotlin/market/femi/api/apis/WiseRouteApiTest.kt
 src/test/kotlin/market/femi/api/models/APITest.kt
@@ -142,6 +137,5 @@ src/test/kotlin/market/femi/api/models/ShotTest.kt
 src/test/kotlin/market/femi/api/models/SolanaTest.kt
 src/test/kotlin/market/femi/api/models/SquareTest.kt
 src/test/kotlin/market/femi/api/models/StatusTest.kt
-src/test/kotlin/market/femi/api/models/UploadTest.kt
 src/test/kotlin/market/femi/api/models/WiseTest.kt
 src/test/kotlin/market/femi/api/models/WordAlignmentTest.kt
