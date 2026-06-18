@@ -31,45 +31,42 @@ import kotlinx.serialization.encoding.*
 /**
  * 
  *
+ * @param amountCents 
  * @param credit 
- * @param currency 
- * @param jws 
  * @param loaded 
- * @param price 
- * @param productId 
- * @param transactionId 
+ * @param paymentUrl 
+ * @param stripePaymentIntentId 
+ * @param stripeSessionId 
  * @param type 
  */
 @Serializable
 
-data class ApplePay (
+data class Stripe (
+
+    @SerialName(value = "amount_cents") @Required val amountCents: kotlin.Long,
 
     @SerialName(value = "credit") @Required val credit: kotlin.Long,
 
-    @SerialName(value = "currency") @Required val currency: kotlin.String,
-
-    @SerialName(value = "jws") @Required val jws: kotlin.String,
-
     @SerialName(value = "loaded") @Required val loaded: kotlin.Boolean,
 
-    @SerialName(value = "price") @Required val price: kotlin.Long,
+    @SerialName(value = "payment_url") @Required val paymentUrl: kotlin.String,
 
-    @SerialName(value = "product_id") @Required val productId: kotlin.String,
+    @SerialName(value = "stripe_payment_intent_id") @Required val stripePaymentIntentId: kotlin.String,
 
-    @SerialName(value = "transaction_id") @Required val transactionId: kotlin.String,
+    @SerialName(value = "stripe_session_id") @Required val stripeSessionId: kotlin.String,
 
-    @SerialName(value = "type") @Required val type: ApplePay.Type
+    @SerialName(value = "type") @Required val type: Stripe.Type
 
 ) {
 
     /**
      * 
      *
-     * Values: ApplePay
+     * Values: Stripe
      */
     @Serializable
     enum class Type(val value: kotlin.String) {
-        @SerialName(value = "ApplePay") ApplePay("ApplePay");
+        @SerialName(value = "Stripe") Stripe("Stripe");
     }
 
 }

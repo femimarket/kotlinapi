@@ -32,44 +32,41 @@ import kotlinx.serialization.encoding.*
  * 
  *
  * @param credit 
- * @param currency 
- * @param jws 
  * @param loaded 
- * @param price 
+ * @param packageName 
  * @param productId 
- * @param transactionId 
+ * @param purchaseToken 
  * @param type 
+ * @param orderId 
  */
 @Serializable
 
-data class ApplePay (
+data class GooglePay (
 
     @SerialName(value = "credit") @Required val credit: kotlin.Long,
 
-    @SerialName(value = "currency") @Required val currency: kotlin.String,
-
-    @SerialName(value = "jws") @Required val jws: kotlin.String,
-
     @SerialName(value = "loaded") @Required val loaded: kotlin.Boolean,
 
-    @SerialName(value = "price") @Required val price: kotlin.Long,
+    @SerialName(value = "package_name") @Required val packageName: kotlin.String,
 
     @SerialName(value = "product_id") @Required val productId: kotlin.String,
 
-    @SerialName(value = "transaction_id") @Required val transactionId: kotlin.String,
+    @SerialName(value = "purchase_token") @Required val purchaseToken: kotlin.String,
 
-    @SerialName(value = "type") @Required val type: ApplePay.Type
+    @SerialName(value = "type") @Required val type: GooglePay.Type,
+
+    @SerialName(value = "order_id") val orderId: kotlin.String? = null
 
 ) {
 
     /**
      * 
      *
-     * Values: ApplePay
+     * Values: GooglePay
      */
     @Serializable
     enum class Type(val value: kotlin.String) {
-        @SerialName(value = "ApplePay") ApplePay("ApplePay");
+        @SerialName(value = "GooglePay") GooglePay("GooglePay");
     }
 
 }

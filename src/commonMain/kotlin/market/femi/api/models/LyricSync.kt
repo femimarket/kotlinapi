@@ -33,37 +33,40 @@ import kotlinx.serialization.encoding.*
 /**
  * 
  *
- * @param audio 
- * @param id 
+ * @param audio input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
+ * @param characters return
  * @param lyrics 
- * @param characters 
- * @param credit 
- * @param loss 
- * @param userId 
- * @param words 
+ * @param type 
+ * @param words return
  */
 @Serializable
 
 data class LyricSync (
 
+    /* input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side */
     @SerialName(value = "audio") @Required val audio: kotlin.String,
 
-    @SerialName(value = "id") @Required val id: kotlin.uuid.Uuid,
+    /* return */
+    @SerialName(value = "characters") @Required val characters: kotlin.collections.List<CharacterAlignment>,
 
     @SerialName(value = "lyrics") @Required val lyrics: kotlin.String,
 
-    @SerialName(value = "characters") val characters: kotlin.collections.List<CharacterAlignment>? = null,
+    @SerialName(value = "type") @Required val type: LyricSync.Type,
 
-    @SerialName(value = "credit") val credit: kotlin.Long? = null,
-
-    @SerialName(value = "loss") val loss: kotlin.Double? = null,
-
-    @SerialName(value = "user_id") val userId: kotlin.String? = null,
-
-    @SerialName(value = "words") val words: kotlin.collections.List<WordAlignment>? = null
+    /* return */
+    @SerialName(value = "words") @Required val words: kotlin.collections.List<WordAlignment>
 
 ) {
 
+    /**
+     * 
+     *
+     * Values: LyricSync
+     */
+    @Serializable
+    enum class Type(val value: kotlin.String) {
+        @SerialName(value = "LyricSync") LyricSync("LyricSync");
+    }
 
 }
 

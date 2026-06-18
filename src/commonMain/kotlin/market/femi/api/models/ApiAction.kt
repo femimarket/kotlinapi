@@ -23,50 +23,98 @@
 
 package market.femi.api.models
 
+import market.femi.api.models.ApiChatMessage
+import market.femi.api.models.ApplePay
+import market.femi.api.models.CharacterAlignment
+import market.femi.api.models.Charge
+import market.femi.api.models.ClaudeSonnet46
+import market.femi.api.models.Flux2Pro
+import market.femi.api.models.GooglePay
+import market.femi.api.models.Ltx23A2V
+import market.femi.api.models.LyricSync
+import market.femi.api.models.NanoBanana2
+import market.femi.api.models.Stripe
+import market.femi.api.models.WordAlignment
+import market.femi.api.models.ZImageTurbo
 
 import kotlinx.serialization.*
-import kotlinx.serialization.builtins.serializer
-import kotlinx.serialization.encoding.Decoder
-import kotlinx.serialization.encoding.Encoder
+import kotlinx.serialization.descriptors.*
+import kotlinx.serialization.encoding.*
+import kotlinx.serialization.json.*
 
 /**
  * 
- *
- * Values: Generate,Pay
+ * oneOf union rendered as a type-safe sealed interface.
  */
-@Serializable
-enum class ApiAction(val value: kotlin.String) {
+@Serializable(with = ApiActionSerializer::class)
+sealed interface ApiAction {
+    @JvmInline
+    value class ChargeCase(val value: Charge) : ApiAction
+    @JvmInline
+    value class ZImageTurboCase(val value: ZImageTurbo) : ApiAction
+    @JvmInline
+    value class NanoBanana2Case(val value: NanoBanana2) : ApiAction
+    @JvmInline
+    value class Flux2ProCase(val value: Flux2Pro) : ApiAction
+    @JvmInline
+    value class Ltx23A2VCase(val value: Ltx23A2V) : ApiAction
+    @JvmInline
+    value class ClaudeSonnet46Case(val value: ClaudeSonnet46) : ApiAction
+    @JvmInline
+    value class StripeCase(val value: Stripe) : ApiAction
+    @JvmInline
+    value class ApplePayCase(val value: ApplePay) : ApiAction
+    @JvmInline
+    value class GooglePayCase(val value: GooglePay) : ApiAction
+    @JvmInline
+    value class LyricSyncCase(val value: LyricSync) : ApiAction
+}
 
-    @SerialName(value = "Generate")
-    Generate("Generate"),
+object ApiActionSerializer : KSerializer<ApiAction> {
+    override val descriptor: SerialDescriptor = buildClassSerialDescriptor("ApiAction")
 
-    @SerialName(value = "Pay")
-    Pay("Pay");
-
-    /**
-     * Override [toString()] to avoid using the enum variable name as the value, and instead use
-     * the actual value defined in the API spec file.
-     *
-     * This solves a problem when the variable name and its value are different, and ensures that
-     * the client sends the correct enum values to the server always.
-     */
-    override fun toString(): kotlin.String = value
-
-    companion object {
-        /**
-         * Converts the provided [data] to a [String] on success, null otherwise.
-         */
-        fun encode(data: kotlin.Any?): kotlin.String? = if (data is ApiAction) "$data" else null
-
-        /**
-         * Returns a valid [ApiAction] for [data], null otherwise.
-         */
-        fun decode(data: kotlin.Any?): ApiAction? = data?.let {
-          val normalizedData = "$it".lowercase()
-          entries.firstOrNull { value ->
-            it == value || normalizedData == "$value".lowercase()
-          }
+    override fun serialize(encoder: Encoder, value: ApiAction) {
+        require(encoder is JsonEncoder) { "ApiAction can only be serialized with Json" }
+        val element = when (value) {
+            is ApiAction.ChargeCase -> encoder.json.encodeToJsonElement(Charge.serializer(), value.value)
+            is ApiAction.ZImageTurboCase -> encoder.json.encodeToJsonElement(ZImageTurbo.serializer(), value.value)
+            is ApiAction.NanoBanana2Case -> encoder.json.encodeToJsonElement(NanoBanana2.serializer(), value.value)
+            is ApiAction.Flux2ProCase -> encoder.json.encodeToJsonElement(Flux2Pro.serializer(), value.value)
+            is ApiAction.Ltx23A2VCase -> encoder.json.encodeToJsonElement(Ltx23A2V.serializer(), value.value)
+            is ApiAction.ClaudeSonnet46Case -> encoder.json.encodeToJsonElement(ClaudeSonnet46.serializer(), value.value)
+            is ApiAction.StripeCase -> encoder.json.encodeToJsonElement(Stripe.serializer(), value.value)
+            is ApiAction.ApplePayCase -> encoder.json.encodeToJsonElement(ApplePay.serializer(), value.value)
+            is ApiAction.GooglePayCase -> encoder.json.encodeToJsonElement(GooglePay.serializer(), value.value)
+            is ApiAction.LyricSyncCase -> encoder.json.encodeToJsonElement(LyricSync.serializer(), value.value)
         }
+        encoder.encodeJsonElement(element)
+    }
+
+    override fun deserialize(decoder: Decoder): ApiAction {
+        require(decoder is JsonDecoder) { "ApiAction can only be deserialized with Json" }
+        val element = decoder.decodeJsonElement()
+        val errors = mutableListOf<String>()
+        try { return ApiAction.ChargeCase(decoder.json.decodeFromJsonElement(Charge.serializer(), element)) }
+        catch (e: Exception) { errors.add("Charge: ${e.message}") }
+        try { return ApiAction.ZImageTurboCase(decoder.json.decodeFromJsonElement(ZImageTurbo.serializer(), element)) }
+        catch (e: Exception) { errors.add("ZImageTurbo: ${e.message}") }
+        try { return ApiAction.NanoBanana2Case(decoder.json.decodeFromJsonElement(NanoBanana2.serializer(), element)) }
+        catch (e: Exception) { errors.add("NanoBanana2: ${e.message}") }
+        try { return ApiAction.Flux2ProCase(decoder.json.decodeFromJsonElement(Flux2Pro.serializer(), element)) }
+        catch (e: Exception) { errors.add("Flux2Pro: ${e.message}") }
+        try { return ApiAction.Ltx23A2VCase(decoder.json.decodeFromJsonElement(Ltx23A2V.serializer(), element)) }
+        catch (e: Exception) { errors.add("Ltx23A2V: ${e.message}") }
+        try { return ApiAction.ClaudeSonnet46Case(decoder.json.decodeFromJsonElement(ClaudeSonnet46.serializer(), element)) }
+        catch (e: Exception) { errors.add("ClaudeSonnet46: ${e.message}") }
+        try { return ApiAction.StripeCase(decoder.json.decodeFromJsonElement(Stripe.serializer(), element)) }
+        catch (e: Exception) { errors.add("Stripe: ${e.message}") }
+        try { return ApiAction.ApplePayCase(decoder.json.decodeFromJsonElement(ApplePay.serializer(), element)) }
+        catch (e: Exception) { errors.add("ApplePay: ${e.message}") }
+        try { return ApiAction.GooglePayCase(decoder.json.decodeFromJsonElement(GooglePay.serializer(), element)) }
+        catch (e: Exception) { errors.add("GooglePay: ${e.message}") }
+        try { return ApiAction.LyricSyncCase(decoder.json.decodeFromJsonElement(LyricSync.serializer(), element)) }
+        catch (e: Exception) { errors.add("LyricSync: ${e.message}") }
+        throw SerializationException("Cannot deserialize ApiAction; tried each variant: $errors")
     }
 }
 

@@ -26,29 +26,23 @@ package market.femi.api.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import market.femi.api.models.ApplePay
+import market.femi.api.models.Stripe
 
-class ApplePayTest : ShouldSpec() {
+class StripeTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of ApplePay
-        //val modelInstance = ApplePay()
+        // uncomment below to create an instance of Stripe
+        //val modelInstance = Stripe()
+
+        // to test the property `amountCents`
+        should("test amountCents") {
+            // uncomment below to test the property
+            //modelInstance.amountCents shouldBe ("TODO")
+        }
 
         // to test the property `credit`
         should("test credit") {
             // uncomment below to test the property
             //modelInstance.credit shouldBe ("TODO")
-        }
-
-        // to test the property `currency`
-        should("test currency") {
-            // uncomment below to test the property
-            //modelInstance.currency shouldBe ("TODO")
-        }
-
-        // to test the property `jws`
-        should("test jws") {
-            // uncomment below to test the property
-            //modelInstance.jws shouldBe ("TODO")
         }
 
         // to test the property `loaded`
@@ -57,22 +51,22 @@ class ApplePayTest : ShouldSpec() {
             //modelInstance.loaded shouldBe ("TODO")
         }
 
-        // to test the property `price`
-        should("test price") {
+        // to test the property `paymentUrl`
+        should("test paymentUrl") {
             // uncomment below to test the property
-            //modelInstance.price shouldBe ("TODO")
+            //modelInstance.paymentUrl shouldBe ("TODO")
         }
 
-        // to test the property `productId`
-        should("test productId") {
+        // to test the property `stripePaymentIntentId`
+        should("test stripePaymentIntentId") {
             // uncomment below to test the property
-            //modelInstance.productId shouldBe ("TODO")
+            //modelInstance.stripePaymentIntentId shouldBe ("TODO")
         }
 
-        // to test the property `transactionId`
-        should("test transactionId") {
+        // to test the property `stripeSessionId`
+        should("test stripeSessionId") {
             // uncomment below to test the property
-            //modelInstance.transactionId shouldBe ("TODO")
+            //modelInstance.stripeSessionId shouldBe ("TODO")
         }
 
         // to test the property `type`

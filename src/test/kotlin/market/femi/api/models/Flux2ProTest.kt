@@ -26,43 +26,35 @@ package market.femi.api.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import market.femi.api.models.LyricSync
-import market.femi.api.models.CharacterAlignment
-import market.femi.api.models.WordAlignment
+import market.femi.api.models.Flux2Pro
 
-class LyricSyncTest : ShouldSpec() {
+class Flux2ProTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of LyricSync
-        //val modelInstance = LyricSync()
+        // uncomment below to create an instance of Flux2Pro
+        //val modelInstance = Flux2Pro()
 
-        // to test the property `audio` - input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
-        should("test audio") {
+        // to test the property `falRequestId`
+        should("test falRequestId") {
             // uncomment below to test the property
-            //modelInstance.audio shouldBe ("TODO")
+            //modelInstance.falRequestId shouldBe ("TODO")
         }
 
-        // to test the property `characters` - return
-        should("test characters") {
+        // to test the property `file` - base64 return
+        should("test file") {
             // uncomment below to test the property
-            //modelInstance.characters shouldBe ("TODO")
+            //modelInstance.file shouldBe ("TODO")
         }
 
-        // to test the property `lyrics`
-        should("test lyrics") {
+        // to test the property `prompt`
+        should("test prompt") {
             // uncomment below to test the property
-            //modelInstance.lyrics shouldBe ("TODO")
+            //modelInstance.prompt shouldBe ("TODO")
         }
 
         // to test the property `type`
         should("test type") {
             // uncomment below to test the property
             //modelInstance.type shouldBe ("TODO")
-        }
-
-        // to test the property `words` - return
-        should("test words") {
-            // uncomment below to test the property
-            //modelInstance.words shouldBe ("TODO")
         }
 
     }

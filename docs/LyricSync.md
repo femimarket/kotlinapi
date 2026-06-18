@@ -4,14 +4,18 @@
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
-| **audio** | **kotlin.String** |  |  |
-| **id** | [**kotlin.uuid.Uuid**](kotlin.uuid.Uuid.md) |  |  |
+| **audio** | **kotlin.String** | input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side |  |
+| **characters** | [**kotlin.collections.List&lt;CharacterAlignment&gt;**](CharacterAlignment.md) | return |  |
 | **lyrics** | **kotlin.String** |  |  |
-| **characters** | [**kotlin.collections.List&lt;CharacterAlignment&gt;**](CharacterAlignment.md) |  |  [optional] |
-| **credit** | **kotlin.Long** |  |  [optional] |
-| **loss** | **kotlin.Double** |  |  [optional] |
-| **userId** | **kotlin.String** |  |  [optional] |
-| **words** | [**kotlin.collections.List&lt;WordAlignment&gt;**](WordAlignment.md) |  |  [optional] |
+| **type** | [**inline**](#Type) |  |  |
+| **words** | [**kotlin.collections.List&lt;WordAlignment&gt;**](WordAlignment.md) | return |  |
+
+
+<a id="Type"></a>
+## Enum: type
+| Name | Value |
+| ---- | ----- |
+| type | LyricSync |
 
 
 

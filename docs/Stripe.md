@@ -1,16 +1,15 @@
 
-# ApplePay
+# Stripe
 
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
+| **amountCents** | **kotlin.Long** |  |  |
 | **credit** | **kotlin.Long** |  |  |
-| **currency** | **kotlin.String** |  |  |
-| **jws** | **kotlin.String** |  |  |
 | **loaded** | **kotlin.Boolean** |  |  |
-| **price** | **kotlin.Long** |  |  |
-| **productId** | **kotlin.String** |  |  |
-| **transactionId** | **kotlin.String** |  |  |
+| **paymentUrl** | **kotlin.String** |  |  |
+| **stripePaymentIntentId** | **kotlin.String** |  |  |
+| **stripeSessionId** | **kotlin.String** |  |  |
 | **type** | [**inline**](#Type) |  |  |
 
 
@@ -18,7 +17,7 @@
 ## Enum: type
 | Name | Value |
 | ---- | ----- |
-| type | ApplePay |
+| type | Stripe |
 
 
 

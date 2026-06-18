@@ -23,40 +23,36 @@
 
 package market.femi.api.models
 
-import market.femi.api.models.ApiAction
-import market.femi.api.models.ApiStatus
 
 import kotlinx.serialization.*
 import kotlinx.serialization.descriptors.*
 import kotlinx.serialization.encoding.*
 
 /**
- * default values
+ * 
  *
- * @param action 
- * @param credit return only
- * @param id uuid v7 preferred
- * @param status 
- * @param userId 
+ * @param description 
+ * @param type 
  */
 @Serializable
 
-data class API (
+data class Charge (
 
-    @SerialName(value = "action") @Required val action: ApiAction,
+    @SerialName(value = "description") @Required val description: kotlin.String,
 
-    /* return only */
-    @SerialName(value = "credit") @Required val credit: kotlin.Long,
-
-    /* uuid v7 preferred */
-    @SerialName(value = "id") @Required val id: kotlin.uuid.Uuid,
-
-    @SerialName(value = "status") @Required val status: ApiStatus,
-
-    @SerialName(value = "user_id") @Required val userId: kotlin.String
+    @SerialName(value = "type") @Required val type: Charge.Type
 
 ) {
 
+    /**
+     * 
+     *
+     * Values: Charge
+     */
+    @Serializable
+    enum class Type(val value: kotlin.String) {
+        @SerialName(value = "Charge") Charge("Charge");
+    }
 
 }
 

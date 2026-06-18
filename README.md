@@ -36,18 +36,8 @@ All URIs are relative to *https://api.earnfemi.com*
 
 | Class | Method | HTTP request | Description |
 | ------------ | ------------- | ------------- | ------------- |
-| *ApiApi* | [**apiHandler**](docs/ApiApi.md#apihandler) | **POST** /api |  |
-| *ApiApi* | [**mediaGate**](docs/ApiApi.md#mediagate) | **GET** /{file} | Auth + per-GB debit gate in front of the `_upload` ServeDir on femi.market.   - not a media file → pass through (static site, app data, 404), free   - media file that isn't a real file in `_upload` → pass through, free   - media file in `_upload` → require Bearer, charge `size × pricing.gb`,     record a debit in the astc ledger, then let ServeDir stream the bytes. The gate only authorizes/charges; ServeDir still does the actual file streaming (range requests, mime, etc.). |
+| *ApiHandlerApi* | [**apiHandler**](docs/ApiHandlerApi.md#apihandler) | **POST** /api |  |
 | *ApiKeyRouteApi* | [**apiKey**](docs/ApiKeyRouteApi.md#apikey) | **POST** /api_key |  |
-| *ApplePayRouteApi* | [**applePay**](docs/ApplePayRouteApi.md#applepay) | **POST** /apple_pay |  |
-| *LyricSyncRouteApi* | [**lyricSync**](docs/LyricSyncRouteApi.md#lyricsync) | **POST** /lyric_sync |  |
-| *PayRouteApi* | [**pay**](docs/PayRouteApi.md#pay) | **POST** /pay |  |
-| *ProjectRouteApi* | [**project**](docs/ProjectRouteApi.md#project) | **POST** /project |  |
-| *RevolutRouteApi* | [**revolut**](docs/RevolutRouteApi.md#revolut) | **POST** /revolut |  |
-| *SolanaRouteApi* | [**solana**](docs/SolanaRouteApi.md#solana) | **POST** /solana |  |
-| *SquareRouteApi* | [**square**](docs/SquareRouteApi.md#square) | **POST** /square |  |
-| *WiseApi* | [**wiseCheck**](docs/WiseApi.md#wisecheck) | **POST** /wise_check |  |
-| *WiseRouteApi* | [**wise**](docs/WiseRouteApi.md#wise) | **POST** /wise |  |
 
 
 <a id="documentation-for-models"></a>
@@ -55,33 +45,22 @@ All URIs are relative to *https://api.earnfemi.com*
 
  - [market.femi.api.models.API](docs/API.md)
  - [market.femi.api.models.ApiAction](docs/ApiAction.md)
- - [market.femi.api.models.ApiAiModel](docs/ApiAiModel.md)
  - [market.femi.api.models.ApiChatMessage](docs/ApiChatMessage.md)
  - [market.femi.api.models.ApiChatRole](docs/ApiChatRole.md)
  - [market.femi.api.models.ApiKey](docs/ApiKey.md)
- - [market.femi.api.models.ApiPay](docs/ApiPay.md)
- - [market.femi.api.models.ApiPayProvider](docs/ApiPayProvider.md)
  - [market.femi.api.models.ApiStatus](docs/ApiStatus.md)
  - [market.femi.api.models.ApplePay](docs/ApplePay.md)
- - [market.femi.api.models.ApplePayStatus](docs/ApplePayStatus.md)
- - [market.femi.api.models.AudioLine](docs/AudioLine.md)
  - [market.femi.api.models.CharacterAlignment](docs/CharacterAlignment.md)
- - [market.femi.api.models.Episode](docs/Episode.md)
- - [market.femi.api.models.Faq](docs/Faq.md)
+ - [market.femi.api.models.Charge](docs/Charge.md)
+ - [market.femi.api.models.ClaudeSonnet46](docs/ClaudeSonnet46.md)
+ - [market.femi.api.models.Flux2Pro](docs/Flux2Pro.md)
+ - [market.femi.api.models.GooglePay](docs/GooglePay.md)
+ - [market.femi.api.models.Ltx23A2V](docs/Ltx23A2V.md)
  - [market.femi.api.models.LyricSync](docs/LyricSync.md)
- - [market.femi.api.models.Pay](docs/Pay.md)
- - [market.femi.api.models.PayProvider](docs/PayProvider.md)
- - [market.femi.api.models.PayStatus](docs/PayStatus.md)
- - [market.femi.api.models.Project](docs/Project.md)
- - [market.femi.api.models.Revolut](docs/Revolut.md)
- - [market.femi.api.models.Scene](docs/Scene.md)
- - [market.femi.api.models.Season](docs/Season.md)
- - [market.femi.api.models.Shot](docs/Shot.md)
- - [market.femi.api.models.Solana](docs/Solana.md)
- - [market.femi.api.models.Square](docs/Square.md)
- - [market.femi.api.models.Status](docs/Status.md)
- - [market.femi.api.models.Wise](docs/Wise.md)
+ - [market.femi.api.models.NanoBanana2](docs/NanoBanana2.md)
+ - [market.femi.api.models.Stripe](docs/Stripe.md)
  - [market.femi.api.models.WordAlignment](docs/WordAlignment.md)
+ - [market.femi.api.models.ZImageTurbo](docs/ZImageTurbo.md)
 
 
 <a id="documentation-for-authorization"></a>

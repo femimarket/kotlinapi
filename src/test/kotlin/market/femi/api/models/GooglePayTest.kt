@@ -26,29 +26,17 @@ package market.femi.api.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import market.femi.api.models.ApplePay
+import market.femi.api.models.GooglePay
 
-class ApplePayTest : ShouldSpec() {
+class GooglePayTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of ApplePay
-        //val modelInstance = ApplePay()
+        // uncomment below to create an instance of GooglePay
+        //val modelInstance = GooglePay()
 
         // to test the property `credit`
         should("test credit") {
             // uncomment below to test the property
             //modelInstance.credit shouldBe ("TODO")
-        }
-
-        // to test the property `currency`
-        should("test currency") {
-            // uncomment below to test the property
-            //modelInstance.currency shouldBe ("TODO")
-        }
-
-        // to test the property `jws`
-        should("test jws") {
-            // uncomment below to test the property
-            //modelInstance.jws shouldBe ("TODO")
         }
 
         // to test the property `loaded`
@@ -57,10 +45,10 @@ class ApplePayTest : ShouldSpec() {
             //modelInstance.loaded shouldBe ("TODO")
         }
 
-        // to test the property `price`
-        should("test price") {
+        // to test the property `packageName`
+        should("test packageName") {
             // uncomment below to test the property
-            //modelInstance.price shouldBe ("TODO")
+            //modelInstance.packageName shouldBe ("TODO")
         }
 
         // to test the property `productId`
@@ -69,16 +57,22 @@ class ApplePayTest : ShouldSpec() {
             //modelInstance.productId shouldBe ("TODO")
         }
 
-        // to test the property `transactionId`
-        should("test transactionId") {
+        // to test the property `purchaseToken`
+        should("test purchaseToken") {
             // uncomment below to test the property
-            //modelInstance.transactionId shouldBe ("TODO")
+            //modelInstance.purchaseToken shouldBe ("TODO")
         }
 
         // to test the property `type`
         should("test type") {
             // uncomment below to test the property
             //modelInstance.type shouldBe ("TODO")
+        }
+
+        // to test the property `orderId`
+        should("test orderId") {
+            // uncomment below to test the property
+            //modelInstance.orderId shouldBe ("TODO")
         }
 
     }

@@ -27,11 +27,180 @@ import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
 import market.femi.api.models.ApiAction
+import market.femi.api.models.ApiChatMessage
+import market.femi.api.models.ApplePay
+import market.femi.api.models.CharacterAlignment
+import market.femi.api.models.Charge
+import market.femi.api.models.ClaudeSonnet46
+import market.femi.api.models.Flux2Pro
+import market.femi.api.models.GooglePay
+import market.femi.api.models.Ltx23A2V
+import market.femi.api.models.LyricSync
+import market.femi.api.models.NanoBanana2
+import market.femi.api.models.Stripe
+import market.femi.api.models.WordAlignment
+import market.femi.api.models.ZImageTurbo
 
 class ApiActionTest : ShouldSpec() {
     init {
         // uncomment below to create an instance of ApiAction
         //val modelInstance = ApiAction()
+
+        // to test the property `description`
+        should("test description") {
+            // uncomment below to test the property
+            //modelInstance.description shouldBe ("TODO")
+        }
+
+        // to test the property `type`
+        should("test type") {
+            // uncomment below to test the property
+            //modelInstance.type shouldBe ("TODO")
+        }
+
+        // to test the property `falRequestId`
+        should("test falRequestId") {
+            // uncomment below to test the property
+            //modelInstance.falRequestId shouldBe ("TODO")
+        }
+
+        // to test the property `file` - base64 return
+        should("test file") {
+            // uncomment below to test the property
+            //modelInstance.file shouldBe ("TODO")
+        }
+
+        // to test the property `prompt`
+        should("test prompt") {
+            // uncomment below to test the property
+            //modelInstance.prompt shouldBe ("TODO")
+        }
+
+        // to test the property `audio` - input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
+        should("test audio") {
+            // uncomment below to test the property
+            //modelInstance.audio shouldBe ("TODO")
+        }
+
+        // to test the property `comfyRequestId`
+        should("test comfyRequestId") {
+            // uncomment below to test the property
+            //modelInstance.comfyRequestId shouldBe ("TODO")
+        }
+
+        // to test the property `image` - input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
+        should("test image") {
+            // uncomment below to test the property
+            //modelInstance.image shouldBe ("TODO")
+        }
+
+        // to test the property `messages`
+        should("test messages") {
+            // uncomment below to test the property
+            //modelInstance.messages shouldBe ("TODO")
+        }
+
+        // to test the property `amountCents`
+        should("test amountCents") {
+            // uncomment below to test the property
+            //modelInstance.amountCents shouldBe ("TODO")
+        }
+
+        // to test the property `credit`
+        should("test credit") {
+            // uncomment below to test the property
+            //modelInstance.credit shouldBe ("TODO")
+        }
+
+        // to test the property `loaded`
+        should("test loaded") {
+            // uncomment below to test the property
+            //modelInstance.loaded shouldBe ("TODO")
+        }
+
+        // to test the property `paymentUrl`
+        should("test paymentUrl") {
+            // uncomment below to test the property
+            //modelInstance.paymentUrl shouldBe ("TODO")
+        }
+
+        // to test the property `stripePaymentIntentId`
+        should("test stripePaymentIntentId") {
+            // uncomment below to test the property
+            //modelInstance.stripePaymentIntentId shouldBe ("TODO")
+        }
+
+        // to test the property `stripeSessionId`
+        should("test stripeSessionId") {
+            // uncomment below to test the property
+            //modelInstance.stripeSessionId shouldBe ("TODO")
+        }
+
+        // to test the property `currency`
+        should("test currency") {
+            // uncomment below to test the property
+            //modelInstance.currency shouldBe ("TODO")
+        }
+
+        // to test the property `jws`
+        should("test jws") {
+            // uncomment below to test the property
+            //modelInstance.jws shouldBe ("TODO")
+        }
+
+        // to test the property `price`
+        should("test price") {
+            // uncomment below to test the property
+            //modelInstance.price shouldBe ("TODO")
+        }
+
+        // to test the property `productId`
+        should("test productId") {
+            // uncomment below to test the property
+            //modelInstance.productId shouldBe ("TODO")
+        }
+
+        // to test the property `transactionId`
+        should("test transactionId") {
+            // uncomment below to test the property
+            //modelInstance.transactionId shouldBe ("TODO")
+        }
+
+        // to test the property `packageName`
+        should("test packageName") {
+            // uncomment below to test the property
+            //modelInstance.packageName shouldBe ("TODO")
+        }
+
+        // to test the property `purchaseToken`
+        should("test purchaseToken") {
+            // uncomment below to test the property
+            //modelInstance.purchaseToken shouldBe ("TODO")
+        }
+
+        // to test the property `characters` - return
+        should("test characters") {
+            // uncomment below to test the property
+            //modelInstance.characters shouldBe ("TODO")
+        }
+
+        // to test the property `lyrics`
+        should("test lyrics") {
+            // uncomment below to test the property
+            //modelInstance.lyrics shouldBe ("TODO")
+        }
+
+        // to test the property `words` - return
+        should("test words") {
+            // uncomment below to test the property
+            //modelInstance.words shouldBe ("TODO")
+        }
+
+        // to test the property `orderId`
+        should("test orderId") {
+            // uncomment below to test the property
+            //modelInstance.orderId shouldBe ("TODO")
+        }
 
     }
 }

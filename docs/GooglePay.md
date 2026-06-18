@@ -1,24 +1,23 @@
 
-# ApplePay
+# GooglePay
 
 ## Properties
 | Name | Type | Description | Notes |
 | ------------ | ------------- | ------------- | ------------- |
 | **credit** | **kotlin.Long** |  |  |
-| **currency** | **kotlin.String** |  |  |
-| **jws** | **kotlin.String** |  |  |
 | **loaded** | **kotlin.Boolean** |  |  |
-| **price** | **kotlin.Long** |  |  |
+| **packageName** | **kotlin.String** |  |  |
 | **productId** | **kotlin.String** |  |  |
-| **transactionId** | **kotlin.String** |  |  |
+| **purchaseToken** | **kotlin.String** |  |  |
 | **type** | [**inline**](#Type) |  |  |
+| **orderId** | **kotlin.String** |  |  [optional] |
 
 
 <a id="Type"></a>
 ## Enum: type
 | Name | Value |
 | ---- | ----- |
-| type | ApplePay |
+| type | GooglePay |
 
 
 

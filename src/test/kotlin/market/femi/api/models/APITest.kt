@@ -28,9 +28,6 @@ import io.kotlintest.specs.ShouldSpec
 
 import market.femi.api.models.API
 import market.femi.api.models.ApiAction
-import market.femi.api.models.ApiAiModel
-import market.femi.api.models.ApiChatMessage
-import market.femi.api.models.ApiPay
 import market.femi.api.models.ApiStatus
 
 class APITest : ShouldSpec() {
@@ -44,70 +41,16 @@ class APITest : ShouldSpec() {
             //modelInstance.action shouldBe ("TODO")
         }
 
-        // to test the property `audio` - input audio as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
-        should("test audio") {
-            // uncomment below to test the property
-            //modelInstance.audio shouldBe ("TODO")
-        }
-
-        // to test the property `balance`
-        should("test balance") {
-            // uncomment below to test the property
-            //modelInstance.balance shouldBe ("TODO")
-        }
-
-        // to test the property `credit`
+        // to test the property `credit` - return only
         should("test credit") {
             // uncomment below to test the property
             //modelInstance.credit shouldBe ("TODO")
         }
 
-        // to test the property `file` - filename of result to retrieve
-        should("test file") {
-            // uncomment below to test the property
-            //modelInstance.file shouldBe ("TODO")
-        }
-
-        // to test the property `id` - uuid v7
+        // to test the property `id` - uuid v7 preferred
         should("test id") {
             // uncomment below to test the property
             //modelInstance.id shouldBe ("TODO")
-        }
-
-        // to test the property `image` - input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
-        should("test image") {
-            // uncomment below to test the property
-            //modelInstance.image shouldBe ("TODO")
-        }
-
-        // to test the property `messages` - default value is non-empty array
-        should("test messages") {
-            // uncomment below to test the property
-            //modelInstance.messages shouldBe ("TODO")
-        }
-
-        // to test the property `model`
-        should("test model") {
-            // uncomment below to test the property
-            //modelInstance.model shouldBe ("TODO")
-        }
-
-        // to test the property `pay`
-        should("test pay") {
-            // uncomment below to test the property
-            //modelInstance.pay shouldBe ("TODO")
-        }
-
-        // to test the property `prompt`
-        should("test prompt") {
-            // uncomment below to test the property
-            //modelInstance.prompt shouldBe ("TODO")
-        }
-
-        // to test the property `requestId` - transient, managed by server
-        should("test requestId") {
-            // uncomment below to test the property
-            //modelInstance.requestId shouldBe ("TODO")
         }
 
         // to test the property `status`
