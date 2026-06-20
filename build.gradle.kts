@@ -3,36 +3,21 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     kotlin("multiplatform") version "2.2.20" // kotlin_version
     kotlin("plugin.serialization") version "2.2.20" // kotlin_version
-    id("com.vanniktech.maven.publish") version "0.30.0"
+    `maven-publish`
 }
 
 group = "io.github.femimarket"
-version = "4.3.0"
+version = "4.3.1"
 
-mavenPublishing {
-    publishToMavenCentral(com.vanniktech.maven.publish.SonatypeHost.CENTRAL_PORTAL)
-    signAllPublications()
-    coordinates("io.github.femimarket", "kotlinapi", project.version.toString())
-    pom {
-        name.set("kotlinapi")
-        description.set("Kotlin client for api.earnfemi.com")
-        url.set("https://github.com/femimarket/kotlinapi")
-        licenses {
-            license {
-                name.set("MIT")
-                url.set("https://opensource.org/licenses/MIT")
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/femimarket/kotlinapi")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR")
+                password = System.getenv("GITHUB_TOKEN")
             }
-        }
-        developers {
-            developer {
-                id.set("femimarket")
-                name.set("femi")
-            }
-        }
-        scm {
-            url.set("https://github.com/femimarket/kotlinapi")
-            connection.set("scm:git:https://github.com/femimarket/kotlinapi.git")
-            developerConnection.set("scm:git:ssh://git@github.com/femimarket/kotlinapi.git")
         }
     }
 }
