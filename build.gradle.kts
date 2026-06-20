@@ -15,8 +15,8 @@ publishing {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/femimarket/kotlinapi")
             credentials {
-                username = System.getenv("GITHUB_ACTOR")
-                password = System.getenv("GITHUB_TOKEN")
+                username = project.property("gpr.user") as String
+                password = project.property("gpr.key") as String
             }
         }
     }
