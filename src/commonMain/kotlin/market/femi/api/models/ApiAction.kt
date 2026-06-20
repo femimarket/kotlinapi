@@ -37,6 +37,7 @@ import market.femi.api.models.Stripe
 import market.femi.api.models.WordAlignment
 import market.femi.api.models.ZImageTurbo
 
+import kotlin.jvm.JvmInline
 import kotlinx.serialization.*
 import kotlinx.serialization.descriptors.*
 import kotlinx.serialization.encoding.*
