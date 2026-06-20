@@ -49,25 +49,25 @@ import kotlinx.serialization.json.*
 @Serializable(with = ApiActionSerializer::class)
 sealed interface ApiAction {
     @JvmInline
+    value class ApplePayCase(val value: ApplePay) : ApiAction
+    @JvmInline
     value class ChargeCase(val value: Charge) : ApiAction
-    @JvmInline
-    value class ZImageTurboCase(val value: ZImageTurbo) : ApiAction
-    @JvmInline
-    value class NanoBanana2Case(val value: NanoBanana2) : ApiAction
-    @JvmInline
-    value class Flux2ProCase(val value: Flux2Pro) : ApiAction
-    @JvmInline
-    value class Ltx23A2VCase(val value: Ltx23A2V) : ApiAction
     @JvmInline
     value class ClaudeSonnet46Case(val value: ClaudeSonnet46) : ApiAction
     @JvmInline
-    value class StripeCase(val value: Stripe) : ApiAction
-    @JvmInline
-    value class ApplePayCase(val value: ApplePay) : ApiAction
+    value class Flux2ProCase(val value: Flux2Pro) : ApiAction
     @JvmInline
     value class GooglePayCase(val value: GooglePay) : ApiAction
     @JvmInline
+    value class Ltx23A2VCase(val value: Ltx23A2V) : ApiAction
+    @JvmInline
     value class LyricSyncCase(val value: LyricSync) : ApiAction
+    @JvmInline
+    value class NanoBanana2Case(val value: NanoBanana2) : ApiAction
+    @JvmInline
+    value class StripeCase(val value: Stripe) : ApiAction
+    @JvmInline
+    value class ZImageTurboCase(val value: ZImageTurbo) : ApiAction
 }
 
 object ApiActionSerializer : KSerializer<ApiAction> {
@@ -76,45 +76,78 @@ object ApiActionSerializer : KSerializer<ApiAction> {
     override fun serialize(encoder: Encoder, value: ApiAction) {
         require(encoder is JsonEncoder) { "ApiAction can only be serialized with Json" }
         val element = when (value) {
-            is ApiAction.ChargeCase -> encoder.json.encodeToJsonElement(Charge.serializer(), value.value)
-            is ApiAction.ZImageTurboCase -> encoder.json.encodeToJsonElement(ZImageTurbo.serializer(), value.value)
-            is ApiAction.NanoBanana2Case -> encoder.json.encodeToJsonElement(NanoBanana2.serializer(), value.value)
-            is ApiAction.Flux2ProCase -> encoder.json.encodeToJsonElement(Flux2Pro.serializer(), value.value)
-            is ApiAction.Ltx23A2VCase -> encoder.json.encodeToJsonElement(Ltx23A2V.serializer(), value.value)
-            is ApiAction.ClaudeSonnet46Case -> encoder.json.encodeToJsonElement(ClaudeSonnet46.serializer(), value.value)
-            is ApiAction.StripeCase -> encoder.json.encodeToJsonElement(Stripe.serializer(), value.value)
-            is ApiAction.ApplePayCase -> encoder.json.encodeToJsonElement(ApplePay.serializer(), value.value)
-            is ApiAction.GooglePayCase -> encoder.json.encodeToJsonElement(GooglePay.serializer(), value.value)
-            is ApiAction.LyricSyncCase -> encoder.json.encodeToJsonElement(LyricSync.serializer(), value.value)
+            is ApiAction.ApplePayCase -> {
+                val map = encoder.json.encodeToJsonElement(ApplePay.serializer(), value.value).jsonObject.toMutableMap()
+                map["type"] = JsonPrimitive("ApplePay")
+                JsonObject(map)
+            }
+            is ApiAction.ChargeCase -> {
+                val map = encoder.json.encodeToJsonElement(Charge.serializer(), value.value).jsonObject.toMutableMap()
+                map["type"] = JsonPrimitive("Charge")
+                JsonObject(map)
+            }
+            is ApiAction.ClaudeSonnet46Case -> {
+                val map = encoder.json.encodeToJsonElement(ClaudeSonnet46.serializer(), value.value).jsonObject.toMutableMap()
+                map["type"] = JsonPrimitive("ClaudeSonnet4_6")
+                JsonObject(map)
+            }
+            is ApiAction.Flux2ProCase -> {
+                val map = encoder.json.encodeToJsonElement(Flux2Pro.serializer(), value.value).jsonObject.toMutableMap()
+                map["type"] = JsonPrimitive("Flux2Pro")
+                JsonObject(map)
+            }
+            is ApiAction.GooglePayCase -> {
+                val map = encoder.json.encodeToJsonElement(GooglePay.serializer(), value.value).jsonObject.toMutableMap()
+                map["type"] = JsonPrimitive("GooglePay")
+                JsonObject(map)
+            }
+            is ApiAction.Ltx23A2VCase -> {
+                val map = encoder.json.encodeToJsonElement(Ltx23A2V.serializer(), value.value).jsonObject.toMutableMap()
+                map["type"] = JsonPrimitive("Ltx2_3A2V")
+                JsonObject(map)
+            }
+            is ApiAction.LyricSyncCase -> {
+                val map = encoder.json.encodeToJsonElement(LyricSync.serializer(), value.value).jsonObject.toMutableMap()
+                map["type"] = JsonPrimitive("LyricSync")
+                JsonObject(map)
+            }
+            is ApiAction.NanoBanana2Case -> {
+                val map = encoder.json.encodeToJsonElement(NanoBanana2.serializer(), value.value).jsonObject.toMutableMap()
+                map["type"] = JsonPrimitive("NanoBanana2")
+                JsonObject(map)
+            }
+            is ApiAction.StripeCase -> {
+                val map = encoder.json.encodeToJsonElement(Stripe.serializer(), value.value).jsonObject.toMutableMap()
+                map["type"] = JsonPrimitive("Stripe")
+                JsonObject(map)
+            }
+            is ApiAction.ZImageTurboCase -> {
+                val map = encoder.json.encodeToJsonElement(ZImageTurbo.serializer(), value.value).jsonObject.toMutableMap()
+                map["type"] = JsonPrimitive("ZImageTurbo")
+                JsonObject(map)
+            }
         }
         encoder.encodeJsonElement(element)
     }
 
     override fun deserialize(decoder: Decoder): ApiAction {
         require(decoder is JsonDecoder) { "ApiAction can only be deserialized with Json" }
-        val element = decoder.decodeJsonElement()
-        val errors = mutableListOf<String>()
-        try { return ApiAction.ChargeCase(decoder.json.decodeFromJsonElement(Charge.serializer(), element)) }
-        catch (e: Exception) { errors.add("Charge: ${e.message}") }
-        try { return ApiAction.ZImageTurboCase(decoder.json.decodeFromJsonElement(ZImageTurbo.serializer(), element)) }
-        catch (e: Exception) { errors.add("ZImageTurbo: ${e.message}") }
-        try { return ApiAction.NanoBanana2Case(decoder.json.decodeFromJsonElement(NanoBanana2.serializer(), element)) }
-        catch (e: Exception) { errors.add("NanoBanana2: ${e.message}") }
-        try { return ApiAction.Flux2ProCase(decoder.json.decodeFromJsonElement(Flux2Pro.serializer(), element)) }
-        catch (e: Exception) { errors.add("Flux2Pro: ${e.message}") }
-        try { return ApiAction.Ltx23A2VCase(decoder.json.decodeFromJsonElement(Ltx23A2V.serializer(), element)) }
-        catch (e: Exception) { errors.add("Ltx23A2V: ${e.message}") }
-        try { return ApiAction.ClaudeSonnet46Case(decoder.json.decodeFromJsonElement(ClaudeSonnet46.serializer(), element)) }
-        catch (e: Exception) { errors.add("ClaudeSonnet46: ${e.message}") }
-        try { return ApiAction.StripeCase(decoder.json.decodeFromJsonElement(Stripe.serializer(), element)) }
-        catch (e: Exception) { errors.add("Stripe: ${e.message}") }
-        try { return ApiAction.ApplePayCase(decoder.json.decodeFromJsonElement(ApplePay.serializer(), element)) }
-        catch (e: Exception) { errors.add("ApplePay: ${e.message}") }
-        try { return ApiAction.GooglePayCase(decoder.json.decodeFromJsonElement(GooglePay.serializer(), element)) }
-        catch (e: Exception) { errors.add("GooglePay: ${e.message}") }
-        try { return ApiAction.LyricSyncCase(decoder.json.decodeFromJsonElement(LyricSync.serializer(), element)) }
-        catch (e: Exception) { errors.add("LyricSync: ${e.message}") }
-        throw SerializationException("Cannot deserialize ApiAction; tried each variant: $errors")
+        val obj = decoder.decodeJsonElement().jsonObject
+        val discriminator = obj["type"]?.jsonPrimitive?.content
+            ?: throw SerializationException("Missing discriminator 'type' for ApiAction")
+        return when (discriminator) {
+            "ApplePay" -> ApiAction.ApplePayCase(decoder.json.decodeFromJsonElement(ApplePay.serializer(), obj))
+            "Charge" -> ApiAction.ChargeCase(decoder.json.decodeFromJsonElement(Charge.serializer(), obj))
+            "ClaudeSonnet4_6" -> ApiAction.ClaudeSonnet46Case(decoder.json.decodeFromJsonElement(ClaudeSonnet46.serializer(), obj))
+            "Flux2Pro" -> ApiAction.Flux2ProCase(decoder.json.decodeFromJsonElement(Flux2Pro.serializer(), obj))
+            "GooglePay" -> ApiAction.GooglePayCase(decoder.json.decodeFromJsonElement(GooglePay.serializer(), obj))
+            "Ltx2_3A2V" -> ApiAction.Ltx23A2VCase(decoder.json.decodeFromJsonElement(Ltx23A2V.serializer(), obj))
+            "LyricSync" -> ApiAction.LyricSyncCase(decoder.json.decodeFromJsonElement(LyricSync.serializer(), obj))
+            "NanoBanana2" -> ApiAction.NanoBanana2Case(decoder.json.decodeFromJsonElement(NanoBanana2.serializer(), obj))
+            "Stripe" -> ApiAction.StripeCase(decoder.json.decodeFromJsonElement(Stripe.serializer(), obj))
+            "ZImageTurbo" -> ApiAction.ZImageTurboCase(decoder.json.decodeFromJsonElement(ZImageTurbo.serializer(), obj))
+            else -> throw SerializationException("Unknown type '$discriminator' for ApiAction")
+        }
     }
 }
 
