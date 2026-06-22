@@ -28,6 +28,7 @@ import market.femi.api.models.ApplePay
 import market.femi.api.models.CharacterAlignment
 import market.femi.api.models.Charge
 import market.femi.api.models.ClaudeSonnet46
+import market.femi.api.models.Flux2KleinI2I
 import market.femi.api.models.Flux2Pro
 import market.femi.api.models.GooglePay
 import market.femi.api.models.Ltx23A2V
@@ -55,6 +56,8 @@ sealed interface ApiAction {
     value class ChargeCase(val value: Charge) : ApiAction
     @JvmInline
     value class ClaudeSonnet46Case(val value: ClaudeSonnet46) : ApiAction
+    @JvmInline
+    value class Flux2KleinI2ICase(val value: Flux2KleinI2I) : ApiAction
     @JvmInline
     value class Flux2ProCase(val value: Flux2Pro) : ApiAction
     @JvmInline
@@ -90,6 +93,11 @@ object ApiActionSerializer : KSerializer<ApiAction> {
             is ApiAction.ClaudeSonnet46Case -> {
                 val map = encoder.json.encodeToJsonElement(ClaudeSonnet46.serializer(), value.value).jsonObject.toMutableMap()
                 map["type"] = JsonPrimitive("ClaudeSonnet4_6")
+                JsonObject(map)
+            }
+            is ApiAction.Flux2KleinI2ICase -> {
+                val map = encoder.json.encodeToJsonElement(Flux2KleinI2I.serializer(), value.value).jsonObject.toMutableMap()
+                map["type"] = JsonPrimitive("Flux2KleinI2I")
                 JsonObject(map)
             }
             is ApiAction.Flux2ProCase -> {
@@ -140,6 +148,7 @@ object ApiActionSerializer : KSerializer<ApiAction> {
             "ApplePay" -> ApiAction.ApplePayCase(decoder.json.decodeFromJsonElement(ApplePay.serializer(), obj))
             "Charge" -> ApiAction.ChargeCase(decoder.json.decodeFromJsonElement(Charge.serializer(), obj))
             "ClaudeSonnet4_6" -> ApiAction.ClaudeSonnet46Case(decoder.json.decodeFromJsonElement(ClaudeSonnet46.serializer(), obj))
+            "Flux2KleinI2I" -> ApiAction.Flux2KleinI2ICase(decoder.json.decodeFromJsonElement(Flux2KleinI2I.serializer(), obj))
             "Flux2Pro" -> ApiAction.Flux2ProCase(decoder.json.decodeFromJsonElement(Flux2Pro.serializer(), obj))
             "GooglePay" -> ApiAction.GooglePayCase(decoder.json.decodeFromJsonElement(GooglePay.serializer(), obj))
             "Ltx2_3A2V" -> ApiAction.Ltx23A2VCase(decoder.json.decodeFromJsonElement(Ltx23A2V.serializer(), obj))
