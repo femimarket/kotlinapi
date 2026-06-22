@@ -32,6 +32,7 @@ import market.femi.api.models.ApplePay
 import market.femi.api.models.CharacterAlignment
 import market.femi.api.models.Charge
 import market.femi.api.models.ClaudeSonnet46
+import market.femi.api.models.Flux2DevI2I
 import market.femi.api.models.Flux2KleinI2I
 import market.femi.api.models.Flux2Pro
 import market.femi.api.models.GooglePay
@@ -89,7 +90,7 @@ class ApiActionTest : ShouldSpec() {
             //modelInstance.comfyRequestId shouldBe ("TODO")
         }
 
-        // to test the property `image` - input subject image as base64 — data URI (web) or raw base64 (android/ios); type detected server-side
+        // to test the property `image` - input image as base64 — data URI (web) or raw base64 (android/ios); type detected server-side
         should("test image") {
             // uncomment below to test the property
             //modelInstance.image shouldBe ("TODO")

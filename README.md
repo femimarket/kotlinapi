@@ -53,6 +53,7 @@ All URIs are relative to *https://api.earnfemi.com*
  - [market.femi.api.models.CharacterAlignment](docs/CharacterAlignment.md)
  - [market.femi.api.models.Charge](docs/Charge.md)
  - [market.femi.api.models.ClaudeSonnet46](docs/ClaudeSonnet46.md)
+ - [market.femi.api.models.Flux2DevI2I](docs/Flux2DevI2I.md)
  - [market.femi.api.models.Flux2KleinI2I](docs/Flux2KleinI2I.md)
  - [market.femi.api.models.Flux2Pro](docs/Flux2Pro.md)
  - [market.femi.api.models.GooglePay](docs/GooglePay.md)
