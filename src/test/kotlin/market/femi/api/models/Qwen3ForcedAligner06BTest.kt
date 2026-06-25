@@ -26,16 +26,16 @@ package market.femi.api.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import market.femi.api.models.LyricSync
+import market.femi.api.models.Qwen3ForcedAligner06B
 import market.femi.api.models.CharacterAlignment
 import market.femi.api.models.WordAlignment
 
-class LyricSyncTest : ShouldSpec() {
+class Qwen3ForcedAligner06BTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of LyricSync
-        //val modelInstance = LyricSync()
+        // uncomment below to create an instance of Qwen3ForcedAligner06B
+        //val modelInstance = Qwen3ForcedAligner06B()
 
-        // to test the property `audio` - input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
+        // to test the property `audio` - input audio as base64 of raw 16 kHz mono f32 LE PCM (client-decoded; no container)
         should("test audio") {
             // uncomment below to test the property
             //modelInstance.audio shouldBe ("TODO")
@@ -47,7 +47,7 @@ class LyricSyncTest : ShouldSpec() {
             //modelInstance.characters shouldBe ("TODO")
         }
 
-        // to test the property `lyrics`
+        // to test the property `lyrics` - lyrics to align to the audio — supply them, or get them from TranscribeSong first
         should("test lyrics") {
             // uncomment below to test the property
             //modelInstance.lyrics shouldBe ("TODO")

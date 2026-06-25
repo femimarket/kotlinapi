@@ -23,8 +23,6 @@
 
 package market.femi.api.models
 
-import market.femi.api.models.CharacterAlignment
-import market.femi.api.models.WordAlignment
 
 import kotlinx.serialization.*
 import kotlinx.serialization.descriptors.*
@@ -33,39 +31,32 @@ import kotlinx.serialization.encoding.*
 /**
  * 
  *
- * @param audio input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
- * @param characters return
- * @param lyrics 
+ * @param audio input audio as base64 — a real container (mp3/m4a/wav); data URI (web) or raw base64 (android/ios)
+ * @param lyrics transcribed lyrics (return)
  * @param type 
- * @param words return
  */
 @Serializable
 
-data class LyricSync (
+data class Qwen3AsrFlash (
 
-    /* input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side */
+    /* input audio as base64 — a real container (mp3/m4a/wav); data URI (web) or raw base64 (android/ios) */
     @SerialName(value = "audio") @Required val audio: kotlin.String,
 
-    /* return */
-    @SerialName(value = "characters") @Required val characters: kotlin.collections.List<CharacterAlignment>,
-
+    /* transcribed lyrics (return) */
     @SerialName(value = "lyrics") @Required val lyrics: kotlin.String,
 
-    @SerialName(value = "type") @Required val type: LyricSync.Type,
-
-    /* return */
-    @SerialName(value = "words") @Required val words: kotlin.collections.List<WordAlignment>
+    @SerialName(value = "type") @Required val type: Qwen3AsrFlash.Type
 
 ) {
 
     /**
      * 
      *
-     * Values: LyricSync
+     * Values: Qwen3AsrFlash
      */
     @Serializable
     enum class Type(val value: kotlin.String) {
-        @SerialName(value = "LyricSync") LyricSync("LyricSync");
+        @SerialName(value = "Qwen3AsrFlash") Qwen3AsrFlash("Qwen3AsrFlash");
     }
 
 }

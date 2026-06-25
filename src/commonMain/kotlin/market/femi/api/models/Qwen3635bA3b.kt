@@ -23,6 +23,7 @@
 
 package market.femi.api.models
 
+import market.femi.api.models.ApiChatMessage
 
 import kotlinx.serialization.*
 import kotlinx.serialization.descriptors.*
@@ -31,42 +32,27 @@ import kotlinx.serialization.encoding.*
 /**
  * 
  *
- * @param amountCents 
- * @param credit 
- * @param loaded 
- * @param paymentUrl 
- * @param stripePaymentIntentId 
- * @param stripeSessionId 
+ * @param messages 
  * @param type 
  */
 @Serializable
 
-data class Stripe (
+data class Qwen3635bA3b (
 
-    @SerialName(value = "amount_cents") @Required val amountCents: kotlin.Long,
+    @SerialName(value = "messages") @Required val messages: kotlin.collections.List<ApiChatMessage>,
 
-    @SerialName(value = "credit") @Required val credit: kotlin.Long,
-
-    @SerialName(value = "loaded") @Required val loaded: kotlin.Boolean,
-
-    @SerialName(value = "payment_url") @Required val paymentUrl: kotlin.String,
-
-    @SerialName(value = "stripe_payment_intent_id") @Required val stripePaymentIntentId: kotlin.String,
-
-    @SerialName(value = "stripe_session_id") @Required val stripeSessionId: kotlin.String,
-
-    @SerialName(value = "type") @Required val type: Stripe.Type
+    @SerialName(value = "type") @Required val type: Qwen3635bA3b.Type
 
 ) {
 
     /**
      * 
      *
-     * Values: Stripe
+     * Values: Qwen3_6_35bA3b
      */
     @Serializable
     enum class Type(val value: kotlin.String) {
-        @SerialName(value = "Stripe") Stripe("Stripe");
+        @SerialName(value = "Qwen3_6_35bA3b") Qwen3_6_35bA3b("Qwen3_6_35bA3b");
     }
 
 }

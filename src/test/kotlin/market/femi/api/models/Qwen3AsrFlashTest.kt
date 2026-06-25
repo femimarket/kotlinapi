@@ -26,29 +26,29 @@ package market.femi.api.models
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.ShouldSpec
 
-import market.femi.api.models.ApiKey
+import market.femi.api.models.Qwen3AsrFlash
 
-class ApiKeyTest : ShouldSpec() {
+class Qwen3AsrFlashTest : ShouldSpec() {
     init {
-        // uncomment below to create an instance of ApiKey
-        //val modelInstance = ApiKey()
+        // uncomment below to create an instance of Qwen3AsrFlash
+        //val modelInstance = Qwen3AsrFlash()
 
-        // to test the property `id`
-        should("test id") {
+        // to test the property `audio` - input audio as base64 — a real container (mp3/m4a/wav); data URI (web) or raw base64 (android/ios)
+        should("test audio") {
             // uncomment below to test the property
-            //modelInstance.id shouldBe ("TODO")
+            //modelInstance.audio shouldBe ("TODO")
         }
 
-        // to test the property `userId`
-        should("test userId") {
+        // to test the property `lyrics` - transcribed lyrics (return)
+        should("test lyrics") {
             // uncomment below to test the property
-            //modelInstance.userId shouldBe ("TODO")
+            //modelInstance.lyrics shouldBe ("TODO")
         }
 
-        // to test the property `key`
-        should("test key") {
+        // to test the property `type`
+        should("test type") {
             // uncomment below to test the property
-            //modelInstance.key shouldBe ("TODO")
+            //modelInstance.type shouldBe ("TODO")
         }
 
     }

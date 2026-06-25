@@ -37,9 +37,10 @@ import market.femi.api.models.Flux2KleinI2I
 import market.femi.api.models.Flux2Pro
 import market.femi.api.models.GooglePay
 import market.femi.api.models.Ltx23A2V
-import market.femi.api.models.LyricSync
 import market.femi.api.models.NanoBanana2
-import market.femi.api.models.Stripe
+import market.femi.api.models.Qwen3635bA3b
+import market.femi.api.models.Qwen3AsrFlash
+import market.femi.api.models.Qwen3ForcedAligner06B
 import market.femi.api.models.WordAlignment
 import market.femi.api.models.ZImageTurbo
 
@@ -78,7 +79,7 @@ class ApiActionTest : ShouldSpec() {
             //modelInstance.prompt shouldBe ("TODO")
         }
 
-        // to test the property `audio` - input image as base64 — data URI (web) or raw base64 (android/ios), empty if unused; type detected server-side
+        // to test the property `audio` - input audio as base64 — a real container (mp3/m4a/wav); data URI (web) or raw base64 (android/ios)
         should("test audio") {
             // uncomment below to test the property
             //modelInstance.audio shouldBe ("TODO")
@@ -108,40 +109,10 @@ class ApiActionTest : ShouldSpec() {
             //modelInstance.messages shouldBe ("TODO")
         }
 
-        // to test the property `amountCents`
-        should("test amountCents") {
-            // uncomment below to test the property
-            //modelInstance.amountCents shouldBe ("TODO")
-        }
-
         // to test the property `credit`
         should("test credit") {
             // uncomment below to test the property
             //modelInstance.credit shouldBe ("TODO")
-        }
-
-        // to test the property `loaded`
-        should("test loaded") {
-            // uncomment below to test the property
-            //modelInstance.loaded shouldBe ("TODO")
-        }
-
-        // to test the property `paymentUrl`
-        should("test paymentUrl") {
-            // uncomment below to test the property
-            //modelInstance.paymentUrl shouldBe ("TODO")
-        }
-
-        // to test the property `stripePaymentIntentId`
-        should("test stripePaymentIntentId") {
-            // uncomment below to test the property
-            //modelInstance.stripePaymentIntentId shouldBe ("TODO")
-        }
-
-        // to test the property `stripeSessionId`
-        should("test stripeSessionId") {
-            // uncomment below to test the property
-            //modelInstance.stripeSessionId shouldBe ("TODO")
         }
 
         // to test the property `currency`
@@ -154,6 +125,12 @@ class ApiActionTest : ShouldSpec() {
         should("test jws") {
             // uncomment below to test the property
             //modelInstance.jws shouldBe ("TODO")
+        }
+
+        // to test the property `loaded`
+        should("test loaded") {
+            // uncomment below to test the property
+            //modelInstance.loaded shouldBe ("TODO")
         }
 
         // to test the property `price`
@@ -192,7 +169,7 @@ class ApiActionTest : ShouldSpec() {
             //modelInstance.characters shouldBe ("TODO")
         }
 
-        // to test the property `lyrics`
+        // to test the property `lyrics` - transcribed lyrics (return)
         should("test lyrics") {
             // uncomment below to test the property
             //modelInstance.lyrics shouldBe ("TODO")

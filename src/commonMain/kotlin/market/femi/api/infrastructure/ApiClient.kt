@@ -55,7 +55,7 @@ open class ApiClient(
     }
 
     companion object {
-        const val BASE_URL: String = "https://api.earnfemi.com"
+        const val BASE_URL: String = "https://femi.market"
         val JSON_DEFAULT: Json = Json {
           ignoreUnknownKeys = true
           prettyPrint = true

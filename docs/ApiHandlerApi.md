@@ -1,6 +1,6 @@
 # ApiHandlerApi
 
-All URIs are relative to *https://api.earnfemi.com*
+All URIs are relative to *https://femi.market*
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
