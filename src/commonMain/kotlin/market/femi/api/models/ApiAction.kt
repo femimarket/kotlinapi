@@ -25,7 +25,6 @@ package market.femi.api.models
 
 import market.femi.api.models.ApiChatMessage
 import market.femi.api.models.ApplePay
-import market.femi.api.models.CharacterAlignment
 import market.femi.api.models.Charge
 import market.femi.api.models.ClaudeSonnet46
 import market.femi.api.models.Flux2DevI2I
@@ -36,8 +35,6 @@ import market.femi.api.models.Ltx23A2V
 import market.femi.api.models.NanoBanana2
 import market.femi.api.models.Qwen3635bA3b
 import market.femi.api.models.Qwen3AsrFlash
-import market.femi.api.models.Qwen3ForcedAligner06B
-import market.femi.api.models.WordAlignment
 import market.femi.api.models.ZImageTurbo
 
 import kotlin.jvm.JvmInline
@@ -72,8 +69,6 @@ sealed interface ApiAction {
     value class NanoBanana2Case(val value: NanoBanana2) : ApiAction
     @JvmInline
     value class Qwen3AsrFlashCase(val value: Qwen3AsrFlash) : ApiAction
-    @JvmInline
-    value class Qwen3ForcedAligner06BCase(val value: Qwen3ForcedAligner06B) : ApiAction
     @JvmInline
     value class Qwen3635bA3bCase(val value: Qwen3635bA3b) : ApiAction
     @JvmInline
@@ -136,11 +131,6 @@ object ApiActionSerializer : KSerializer<ApiAction> {
                 map["type"] = JsonPrimitive("Qwen3AsrFlash")
                 JsonObject(map)
             }
-            is ApiAction.Qwen3ForcedAligner06BCase -> {
-                val map = encoder.json.encodeToJsonElement(Qwen3ForcedAligner06B.serializer(), value.value).jsonObject.toMutableMap()
-                map["type"] = JsonPrimitive("Qwen3ForcedAligner0_6B")
-                JsonObject(map)
-            }
             is ApiAction.Qwen3635bA3bCase -> {
                 val map = encoder.json.encodeToJsonElement(Qwen3635bA3b.serializer(), value.value).jsonObject.toMutableMap()
                 map["type"] = JsonPrimitive("Qwen3_6_35bA3b")
@@ -171,7 +161,6 @@ object ApiActionSerializer : KSerializer<ApiAction> {
             "Ltx2_3A2V" -> ApiAction.Ltx23A2VCase(decoder.json.decodeFromJsonElement(Ltx23A2V.serializer(), obj))
             "NanoBanana2" -> ApiAction.NanoBanana2Case(decoder.json.decodeFromJsonElement(NanoBanana2.serializer(), obj))
             "Qwen3AsrFlash" -> ApiAction.Qwen3AsrFlashCase(decoder.json.decodeFromJsonElement(Qwen3AsrFlash.serializer(), obj))
-            "Qwen3ForcedAligner0_6B" -> ApiAction.Qwen3ForcedAligner06BCase(decoder.json.decodeFromJsonElement(Qwen3ForcedAligner06B.serializer(), obj))
             "Qwen3_6_35bA3b" -> ApiAction.Qwen3635bA3bCase(decoder.json.decodeFromJsonElement(Qwen3635bA3b.serializer(), obj))
             "ZImageTurbo" -> ApiAction.ZImageTurboCase(decoder.json.decodeFromJsonElement(ZImageTurbo.serializer(), obj))
             else -> throw SerializationException("Unknown type '$discriminator' for ApiAction")

@@ -29,7 +29,6 @@ import io.kotlintest.specs.ShouldSpec
 import market.femi.api.models.ApiAction
 import market.femi.api.models.ApiChatMessage
 import market.femi.api.models.ApplePay
-import market.femi.api.models.CharacterAlignment
 import market.femi.api.models.Charge
 import market.femi.api.models.ClaudeSonnet46
 import market.femi.api.models.Flux2DevI2I
@@ -40,8 +39,6 @@ import market.femi.api.models.Ltx23A2V
 import market.femi.api.models.NanoBanana2
 import market.femi.api.models.Qwen3635bA3b
 import market.femi.api.models.Qwen3AsrFlash
-import market.femi.api.models.Qwen3ForcedAligner06B
-import market.femi.api.models.WordAlignment
 import market.femi.api.models.ZImageTurbo
 
 class ApiActionTest : ShouldSpec() {
@@ -163,22 +160,10 @@ class ApiActionTest : ShouldSpec() {
             //modelInstance.purchaseToken shouldBe ("TODO")
         }
 
-        // to test the property `characters` - return
-        should("test characters") {
-            // uncomment below to test the property
-            //modelInstance.characters shouldBe ("TODO")
-        }
-
         // to test the property `lyrics` - transcribed lyrics (return)
         should("test lyrics") {
             // uncomment below to test the property
             //modelInstance.lyrics shouldBe ("TODO")
-        }
-
-        // to test the property `words` - return
-        should("test words") {
-            // uncomment below to test the property
-            //modelInstance.words shouldBe ("TODO")
         }
 
         // to test the property `orderId`

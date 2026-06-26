@@ -23,9 +23,7 @@
 | **transactionId** | **kotlin.String** |  |  |
 | **packageName** | **kotlin.String** |  |  |
 | **purchaseToken** | **kotlin.String** |  |  |
-| **characters** | [**kotlin.collections.List&lt;CharacterAlignment&gt;**](CharacterAlignment.md) | return |  |
 | **lyrics** | **kotlin.String** | transcribed lyrics (return) |  |
-| **words** | [**kotlin.collections.List&lt;WordAlignment&gt;**](WordAlignment.md) | return |  |
 | **orderId** | **kotlin.String** |  |  [optional] |
 
 
@@ -33,7 +31,7 @@
 ## Enum: type
 | Name | Value |
 | ---- | ----- |
-| type | Charge, ZImageTurbo, NanoBanana2, Flux2Pro, Ltx2_3A2V, Flux2KleinI2I, Flux2DevI2I, ClaudeSonnet4_6, Qwen3_6_35bA3b, ApplePay, GooglePay, Qwen3ForcedAligner0_6B, Qwen3AsrFlash |
+| type | Charge, ZImageTurbo, NanoBanana2, Flux2Pro, Ltx2_3A2V, Flux2KleinI2I, Flux2DevI2I, ClaudeSonnet4_6, Qwen3_6_35bA3b, ApplePay, GooglePay, Qwen3AsrFlash |
 
 
 

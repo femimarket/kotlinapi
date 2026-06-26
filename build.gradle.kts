@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "io.github.femimarket"
-version = "4.6.0"
+version = "4.6.1"
 
 publishing {
     repositories {

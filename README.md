@@ -48,7 +48,6 @@ All URIs are relative to *https://femi.market*
  - [market.femi.api.models.ApiChatRole](docs/ApiChatRole.md)
  - [market.femi.api.models.ApiStatus](docs/ApiStatus.md)
  - [market.femi.api.models.ApplePay](docs/ApplePay.md)
- - [market.femi.api.models.CharacterAlignment](docs/CharacterAlignment.md)
  - [market.femi.api.models.Charge](docs/Charge.md)
  - [market.femi.api.models.ClaudeSonnet46](docs/ClaudeSonnet46.md)
  - [market.femi.api.models.Flux2DevI2I](docs/Flux2DevI2I.md)
@@ -59,8 +58,6 @@ All URIs are relative to *https://femi.market*
  - [market.femi.api.models.NanoBanana2](docs/NanoBanana2.md)
  - [market.femi.api.models.Qwen3635bA3b](docs/Qwen3635bA3b.md)
  - [market.femi.api.models.Qwen3AsrFlash](docs/Qwen3AsrFlash.md)
- - [market.femi.api.models.Qwen3ForcedAligner06B](docs/Qwen3ForcedAligner06B.md)
- - [market.femi.api.models.WordAlignment](docs/WordAlignment.md)
  - [market.femi.api.models.ZImageTurbo](docs/ZImageTurbo.md)
 
 

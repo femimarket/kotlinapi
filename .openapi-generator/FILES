@@ -8,7 +8,6 @@ docs/ApiChatRole.md
 docs/ApiHandlerApi.md
 docs/ApiStatus.md
 docs/ApplePay.md
-docs/CharacterAlignment.md
 docs/Charge.md
 docs/ClaudeSonnet46.md
 docs/Flux2DevI2I.md
@@ -19,8 +18,6 @@ docs/Ltx23A2V.md
 docs/NanoBanana2.md
 docs/Qwen3635bA3b.md
 docs/Qwen3AsrFlash.md
-docs/Qwen3ForcedAligner06B.md
-docs/WordAlignment.md
 docs/ZImageTurbo.md
 gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
@@ -47,7 +44,6 @@ src/commonMain/kotlin/market/femi/api/models/ApiChatMessage.kt
 src/commonMain/kotlin/market/femi/api/models/ApiChatRole.kt
 src/commonMain/kotlin/market/femi/api/models/ApiStatus.kt
 src/commonMain/kotlin/market/femi/api/models/ApplePay.kt
-src/commonMain/kotlin/market/femi/api/models/CharacterAlignment.kt
 src/commonMain/kotlin/market/femi/api/models/Charge.kt
 src/commonMain/kotlin/market/femi/api/models/ClaudeSonnet46.kt
 src/commonMain/kotlin/market/femi/api/models/Flux2DevI2I.kt
@@ -58,8 +54,6 @@ src/commonMain/kotlin/market/femi/api/models/Ltx23A2V.kt
 src/commonMain/kotlin/market/femi/api/models/NanoBanana2.kt
 src/commonMain/kotlin/market/femi/api/models/Qwen3635bA3b.kt
 src/commonMain/kotlin/market/femi/api/models/Qwen3AsrFlash.kt
-src/commonMain/kotlin/market/femi/api/models/Qwen3ForcedAligner06B.kt
-src/commonMain/kotlin/market/femi/api/models/WordAlignment.kt
 src/commonMain/kotlin/market/femi/api/models/ZImageTurbo.kt
 src/test/kotlin/market/femi/api/apis/ApiHandlerApiTest.kt
 src/test/kotlin/market/femi/api/models/APITest.kt
@@ -68,7 +62,6 @@ src/test/kotlin/market/femi/api/models/ApiChatMessageTest.kt
 src/test/kotlin/market/femi/api/models/ApiChatRoleTest.kt
 src/test/kotlin/market/femi/api/models/ApiStatusTest.kt
 src/test/kotlin/market/femi/api/models/ApplePayTest.kt
-src/test/kotlin/market/femi/api/models/CharacterAlignmentTest.kt
 src/test/kotlin/market/femi/api/models/ChargeTest.kt
 src/test/kotlin/market/femi/api/models/ClaudeSonnet46Test.kt
 src/test/kotlin/market/femi/api/models/Flux2DevI2ITest.kt
@@ -79,6 +72,4 @@ src/test/kotlin/market/femi/api/models/Ltx23A2VTest.kt
 src/test/kotlin/market/femi/api/models/NanoBanana2Test.kt
 src/test/kotlin/market/femi/api/models/Qwen3635bA3bTest.kt
 src/test/kotlin/market/femi/api/models/Qwen3AsrFlashTest.kt
-src/test/kotlin/market/femi/api/models/Qwen3ForcedAligner06BTest.kt
-src/test/kotlin/market/femi/api/models/WordAlignmentTest.kt
 src/test/kotlin/market/femi/api/models/ZImageTurboTest.kt
